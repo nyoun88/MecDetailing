@@ -1,53 +1,88 @@
 "use client";
 
 import { Check } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { ArrowLink } from "@/components/ui/arrow-link";
+import { ImagePlaceholder } from "@/components/ui/image-placeholder";
+import { images } from "@/data/images";
 import { cn, formatCurrency } from "@/lib/utils";
 import type { CeramicPackage } from "@/data/packages";
 import { track } from "@/lib/analytics";
 
+/**
+ * Presented as a vehicle specification, not a pricing card: index label,
+ * oversized name, price and product as "spec sheet" data, with the full
+ * inclusion list revealed on hover (desktop) — always visible on touch,
+ * since there's no hover to reveal it there.
+ */
 export function PackageCard({ pkg }: { pkg: CeramicPackage }) {
   return (
-    <Card
-      hoverLift={false}
+    <div
+      id={pkg.id}
       className={cn(
-        "flex h-full flex-col p-9 transition-transform duration-300 hover:-translate-y-1",
-        pkg.featured && "border-accent/50 bg-bg-card shadow-[0_0_0_1px_rgba(199,199,199,0.15)] md:scale-[1.03]",
+        "group scroll-mt-28 relative flex flex-col overflow-hidden rounded-[3px] border transition-all duration-500 ease-out",
+        pkg.featured
+          ? "border-border-strong md:min-h-[640px]"
+          : "border-border md:min-h-[560px]",
       )}
     >
-      <Badge tone={pkg.featured ? "accent" : "default"}>{pkg.badge}</Badge>
-
-      <h3 className="mt-6 text-2xl font-bold tracking-tight text-ink">{pkg.name}</h3>
-      <p className="mt-2 text-sm text-ink-muted">{pkg.product}</p>
-
-      <p className="mt-6 text-4xl font-bold tracking-tight text-ink">
-        From {formatCurrency(pkg.priceFrom)}
-      </p>
-
-      <ul className="mt-8 space-y-3">
-        {pkg.inclusions.map((item) => (
-          <li key={item} className="flex items-start gap-3 text-sm text-ink-muted">
-            <Check aria-hidden className="mt-0.5 size-4 shrink-0 text-accent" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-
-      <div className="mt-9 flex flex-col gap-3">
-        <Button
-          href={`/packages#${pkg.id}`}
-          variant={pkg.featured ? "primary" : "outline"}
-          className="w-full"
-          onClick={() => track.packageViewed(pkg.id)}
-        >
-          View Package
-        </Button>
-        <Button href="/quote" variant="ghost" className="w-full">
-          Get A Quote
-        </Button>
+      <div className="absolute inset-0">
+        <ImagePlaceholder
+          image={images[pkg.image]}
+          className="h-full w-full rounded-none border-0 transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/75 to-bg/25 transition-opacity duration-500 group-hover:from-bg/95 group-hover:via-bg/85" />
       </div>
-    </Card>
+
+      <div className="relative z-10 flex flex-1 flex-col justify-end p-8 md:p-10">
+        <div className="flex items-center justify-between">
+          <span className="font-mono text-xs text-accent">
+            {pkg.index} / {pkg.label.toUpperCase()}
+          </span>
+          {pkg.featured && (
+            <span className="rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-accent">
+              Most Popular
+            </span>
+          )}
+        </div>
+
+        <h3
+          className={cn(
+            "mt-5 font-bold uppercase leading-[0.95] tracking-tight text-ink",
+            pkg.featured
+              ? "text-[clamp(2.25rem,4.5vw,3.75rem)]"
+              : "text-[clamp(2rem,4vw,3.25rem)]",
+          )}
+        >
+          {pkg.nameLines[0]}
+          <br />
+          {pkg.nameLines[1]}
+        </h3>
+
+        <div className="mt-6 flex items-baseline gap-4">
+          <p className="text-2xl font-bold text-ink">From {formatCurrency(pkg.priceFrom)}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-ink-muted">
+            {pkg.product}
+          </p>
+        </div>
+
+        <ul className="mt-6 max-h-0 space-y-2 overflow-hidden opacity-0 transition-all duration-500 ease-out md:group-hover:mt-6 md:group-hover:max-h-60 md:group-hover:opacity-100 max-md:mt-6 max-md:max-h-60 max-md:opacity-100">
+          {pkg.inclusions.map((item) => (
+            <li key={item} className="flex items-center gap-2.5 text-sm text-ink-muted">
+              <Check aria-hidden className="size-3.5 shrink-0 text-accent" />
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-8 flex items-center justify-between border-t border-border pt-6">
+          <ArrowLink
+            href={`/packages#${pkg.id}`}
+            onClick={() => track.packageViewed(pkg.id)}
+          >
+            Explore Package
+          </ArrowLink>
+        </div>
+      </div>
+    </div>
   );
 }

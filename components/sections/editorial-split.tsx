@@ -1,14 +1,17 @@
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { ImagePlaceholder } from "@/components/ui/image-placeholder";
 import { cn } from "@/lib/utils";
 import type { WhyMecSection } from "@/data/why-mec";
 
 export function EditorialSplit({
   section,
+  index,
   reverse,
 }: {
   section: WhyMecSection;
+  index?: string;
   reverse?: boolean;
 }) {
   return (
@@ -23,10 +26,8 @@ export function EditorialSplit({
         </Reveal>
 
         <Reveal delay={0.1} className={cn(reverse && "md:order-1")}>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            {section.eyebrow}
-          </p>
-          <h2 className="mt-4 text-balance text-[clamp(1.7rem,3.4vw,2.5rem)] font-bold leading-[1.1] tracking-tight text-ink">
+          <Eyebrow index={index}>{section.eyebrow}</Eyebrow>
+          <h2 className="mt-5 text-balance text-[clamp(1.9rem,4vw,3rem)] font-bold uppercase leading-[0.98] tracking-tight text-ink">
             {section.title}
           </h2>
           <div className="mt-6 space-y-4">

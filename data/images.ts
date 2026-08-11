@@ -72,4 +72,32 @@ export const images = {
     src: "/images/why-mec-aftercare.jpg",
     alt: "Finished vehicle handover after ceramic coating",
   },
+  essentialProtection: {
+    src: "/images/package-essential.jpg",
+    alt: "Vehicle finished with the Essential Protection ceramic package",
+  },
+  ultimateProtection: {
+    src: "/images/package-ultimate.jpg",
+    alt: "Vehicle finished with the Ultimate Protection ceramic package",
+  },
+  benefitGloss: {
+    src: "/images/benefit-gloss.jpg",
+    alt: "Deep gloss reflection on ceramic-coated paint",
+  },
+  benefitHydrophobic: {
+    src: "/images/benefit-hydrophobic.jpg",
+    alt: "Water sheeting off a hydrophobic ceramic-coated surface",
+  },
+  benefitMaintenance: {
+    src: "/images/benefit-maintenance.jpg",
+    alt: "Vehicle being washed after ceramic coating",
+  },
+  benefitProtection: {
+    src: "/images/benefit-protection.jpg",
+    alt: "Vehicle parked outdoors, protected by ceramic coating",
+  },
+  quoteSidebar: {
+    src: "/images/quote-sidebar.jpg",
+    alt: "Vehicle prepared for ceramic coating application",
+  },
 } satisfies Record<string, ImageSlot>;

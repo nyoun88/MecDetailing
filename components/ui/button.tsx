@@ -43,7 +43,7 @@ const sizeClasses: Record<ButtonSize, string> = {
 };
 
 const base =
-  "group/btn inline-flex items-center justify-center gap-2 rounded-[10px] font-semibold uppercase tracking-[0.08em] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_rgba(0,0,0,0.5)] focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50";
+  "group/btn inline-flex items-center justify-center gap-2 rounded-[3px] font-semibold uppercase tracking-[0.08em] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_rgba(0,0,0,0.5)] focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50";
 
 export function Button({
   variant = "primary",

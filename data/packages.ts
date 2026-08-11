@@ -1,7 +1,10 @@
 export interface CeramicPackage {
   id: string;
+  index: string;
+  label: string;
   badge: string;
   name: string;
+  nameLines: [string, string];
   priceFrom: number;
   product: string;
   warranty: string;
@@ -9,15 +12,19 @@ export interface CeramicPackage {
   inclusions: string[];
   recommendedFor: string;
   description: string;
+  image: "essentialProtection" | "ultimateProtection";
 }
 
 export const packages: CeramicPackage[] = [
   {
     id: "essential-protection",
+    index: "01",
+    label: "Essential",
     badge: "Essential",
     name: "Essential Protection",
+    nameLines: ["Essential", "Protection"],
     priceFrom: 975,
-    product: "Gtechniq Crystal Serum Light",
+    product: "Crystal Serum Light",
     warranty: "5-Year Gtechniq Warranty",
     featured: false,
     description:
@@ -30,13 +37,17 @@ export const packages: CeramicPackage[] = [
       "Professional Installation",
     ],
     recommendedFor: "Daily drivers and owners after dependable, long-term protection.",
+    image: "essentialProtection",
   },
   {
     id: "ultimate-protection",
+    index: "02",
+    label: "Ultimate",
     badge: "Most Popular",
     name: "Ultimate Protection",
+    nameLines: ["Ultimate", "Protection"],
     priceFrom: 1595,
-    product: "Gtechniq Crystal Serum Ultra",
+    product: "Crystal Serum Ultra",
     warranty: "Up to 9-Year Gtechniq Warranty",
     featured: true,
     description:
@@ -50,6 +61,7 @@ export const packages: CeramicPackage[] = [
       "Professional Installation",
     ],
     recommendedFor: "Owners who want the highest level of protection MEC installs.",
+    image: "ultimateProtection",
   },
 ];
 

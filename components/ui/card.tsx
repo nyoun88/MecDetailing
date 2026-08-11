@@ -12,7 +12,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "rounded-[10px] border border-border bg-bg-card p-8 transition-all duration-300 ease-out",
+        "rounded-[3px] border border-border bg-bg-card p-8 transition-all duration-300 ease-out",
         hoverLift && "hover:-translate-y-1 hover:border-border-strong",
         className,
       )}

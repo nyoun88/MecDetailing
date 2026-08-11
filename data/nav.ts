@@ -5,14 +5,14 @@ export interface NavLink {
 
 export const primaryNav: NavLink[] = [
   { label: "Home", href: "/" },
-  { label: "Ceramic Packages", href: "/packages" },
+  { label: "Ceramic Coatings", href: "/packages" },
   { label: "Why MEC", href: "/why-mec" },
   { label: "FAQ", href: "/faq" },
 ];
 
 export const footerNav: NavLink[] = [
   { label: "Home", href: "/" },
-  { label: "Ceramic Packages", href: "/packages" },
+  { label: "Ceramic Coatings", href: "/packages" },
   { label: "Why MEC", href: "/why-mec" },
   { label: "FAQ", href: "/faq" },
   { label: "Get a Free Quote", href: "/quote" },

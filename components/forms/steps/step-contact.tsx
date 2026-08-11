@@ -27,25 +27,14 @@ export function StepContact({
 
   return (
     <div className="grid gap-5">
-      <div className="grid gap-5 sm:grid-cols-2">
-        <TextField
-          label="First Name"
-          id="firstName"
-          value={data.firstName}
-          error={errors.firstName}
-          onChange={(e) => onChange({ firstName: e.target.value })}
-          autoComplete="given-name"
-        />
-        <TextField
-          label="Last Name"
-          id="lastName"
-          value={data.lastName}
-          error={errors.lastName}
-          onChange={(e) => onChange({ lastName: e.target.value })}
-          autoComplete="family-name"
-        />
-      </div>
-
+      <TextField
+        label="First Name"
+        id="firstName"
+        value={data.firstName}
+        error={errors.firstName}
+        onChange={(e) => onChange({ firstName: e.target.value })}
+        autoComplete="given-name"
+      />
       <TextField
         label="Phone"
         id="phone"
@@ -74,7 +63,7 @@ export function StepContact({
         </label>
         <label
           htmlFor={fileInputId}
-          className="mt-2 flex cursor-pointer items-center justify-center gap-3 rounded-[10px] border border-dashed border-border-strong bg-bg-card px-4 py-6 text-sm text-ink-muted transition-colors hover:border-accent hover:text-ink"
+          className="mt-2 flex cursor-pointer items-center justify-center gap-3 rounded-[3px] border border-dashed border-border-strong bg-bg-card px-4 py-6 text-sm text-ink-muted transition-colors hover:border-accent hover:text-ink"
         >
           <Upload aria-hidden className="size-4" />
           {photos.length > 0 ? `${photos.length} photo(s) selected` : "Click to upload photos"}

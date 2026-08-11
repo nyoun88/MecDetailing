@@ -21,7 +21,7 @@ export function TextField({
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
         className={cn(
-          "w-full rounded-[10px] border bg-bg-card px-4 py-3.5 text-base text-ink placeholder:text-ink-muted/60 transition-colors focus-visible:outline-2 focus-visible:outline-accent",
+          "w-full rounded-[3px] border bg-bg-card px-5 py-4 text-lg text-ink placeholder:text-ink-muted/50 transition-colors focus-visible:outline-2 focus-visible:outline-accent md:text-xl",
           error ? "border-red-400/60" : "border-border focus:border-border-strong",
         )}
         {...props}
@@ -55,7 +55,7 @@ export function TextAreaField({
         id={id}
         aria-invalid={Boolean(error)}
         className={cn(
-          "w-full rounded-[10px] border border-border bg-bg-card px-4 py-3.5 text-base text-ink placeholder:text-ink-muted/60 transition-colors focus-visible:outline-2 focus-visible:outline-accent",
+          "w-full rounded-[3px] border border-border bg-bg-card px-4 py-3.5 text-base text-ink placeholder:text-ink-muted/60 transition-colors focus-visible:outline-2 focus-visible:outline-accent",
           error && "border-red-400/60",
         )}
         {...props}

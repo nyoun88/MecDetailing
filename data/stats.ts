@@ -9,8 +9,7 @@ export interface Stat {
 }
 
 export const stats: Stat[] = [
-  { value: "5+", label: "Years Experience" },
-  { value: "100s", label: "Coatings Applied" },
+  { value: "5+", label: "Years Of Experience" },
+  { value: "100s", label: "Ceramic Coatings Applied" },
   { value: "1,000s", label: "Vehicles Detailed" },
-  { value: "100%", label: "Commitment To Quality" },
 ];

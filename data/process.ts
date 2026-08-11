@@ -4,7 +4,48 @@ export interface ProcessStep {
   description: string;
 }
 
+/** Homepage "THE FINISH STARTS BEFORE THE COATING" technical timeline. */
 export const processSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Assess",
+    description: "Paint condition is assessed in person to confirm the right package and preparation required.",
+  },
+  {
+    number: "02",
+    title: "Decontaminate",
+    description: "Chemical and mechanical decontamination removes bonded surface contaminants before anything else happens.",
+  },
+  {
+    number: "03",
+    title: "Correct",
+    description: "Machine polishing addresses swirl marks, light scratches and oxidation where the paint condition requires it.",
+  },
+  {
+    number: "04",
+    title: "Prepare",
+    description: "Panels are wiped down and inspected under lighting to confirm the surface is coating-ready.",
+  },
+  {
+    number: "05",
+    title: "Coat",
+    description: "Your chosen Gtechniq ceramic system is applied by hand, panel by panel, under controlled conditions.",
+  },
+  {
+    number: "06",
+    title: "Cure",
+    description: "The coating is left to cure before handover, with aftercare guidance for the first wash and beyond.",
+  },
+];
+
+/** Retained for the customer-facing "quote → coating" journey used elsewhere. */
+export interface JourneyStep {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export const journeySteps: JourneyStep[] = [
   {
     number: "01",
     title: "Get Your Quote",

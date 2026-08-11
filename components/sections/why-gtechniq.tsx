@@ -25,6 +25,7 @@ export function WhyGtechniq() {
     <section className="bg-bg-secondary py-24 md:py-32">
       <Container>
         <SectionHeading
+          size="md"
           eyebrow="The Product"
           heading="Why Gtechniq?"
           body="We install Gtechniq's professional ceramic coating systems — an established range within the professional detailing industry, applied here under Gtechniq accreditation."

@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { Accordion } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import { ArrowLink } from "@/components/ui/arrow-link";
 import { Reveal } from "@/components/ui/reveal";
 import { faqCategories, faqs, type FaqCategory } from "@/data/faqs";
 
@@ -35,7 +35,7 @@ export function FaqSearch() {
 
   return (
     <div>
-      <Reveal className="mx-auto max-w-lg">
+      <Reveal className="max-w-lg">
         <label htmlFor="faq-search" className="sr-only">
           Search frequently asked questions
         </label>
@@ -50,26 +50,27 @@ export function FaqSearch() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search a question…"
-            className="w-full rounded-full border border-border bg-bg-card py-3 pl-11 pr-4 text-sm text-ink placeholder:text-ink-muted focus-visible:outline-2 focus-visible:outline-accent"
+            className="w-full rounded-[3px] border border-border bg-bg-card py-3 pl-11 pr-4 text-sm text-ink placeholder:text-ink-muted focus-visible:outline-2 focus-visible:outline-accent"
           />
         </div>
       </Reveal>
 
       <div className="mt-16 space-y-16">
         {grouped.length === 0 && (
-          <p className="text-center text-sm text-ink-muted">
+          <p className="text-sm text-ink-muted">
             No questions match &ldquo;{query}&rdquo;. Try a different search,
             or get in touch directly.
           </p>
         )}
 
         {grouped.map((group) => (
-          <Reveal key={group.category} className="mx-auto max-w-3xl">
+          <Reveal key={group.category} className="max-w-3xl">
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
               {group.category}
             </h2>
             <Accordion
-              className="mt-4"
+              size="lg"
+              className="mt-4 border-t border-border"
               items={group.items.map((faq) => ({
                 id: faq.id,
                 title: faq.question,
@@ -78,9 +79,9 @@ export function FaqSearch() {
             />
             {categoryCta[group.category] && (
               <div className="mt-8">
-                <Button href={categoryCta[group.category]!.href} variant="outline">
+                <ArrowLink href={categoryCta[group.category]!.href}>
                   {categoryCta[group.category]!.label}
-                </Button>
+                </ArrowLink>
               </div>
             )}
           </Reveal>

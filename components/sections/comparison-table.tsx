@@ -7,13 +7,9 @@ export function ComparisonTable() {
   return (
     <section className="bg-bg py-24 md:py-32">
       <Container>
-        <SectionHeading
-          align="center"
-          className="mx-auto"
-          heading="Which Package Is Right For Me?"
-        />
+        <SectionHeading size="md" heading="Which package is right for me?" />
 
-        <Reveal delay={0.1} className="mt-14 overflow-x-auto rounded-[10px] border border-border">
+        <Reveal delay={0.1} className="mt-14 overflow-x-auto rounded-[3px] border border-border">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
             <thead>
               <tr className="border-b border-border bg-bg-secondary">

@@ -16,9 +16,9 @@ export function PackagesSection() {
           body="From essential protection to our ultimate ceramic coating system, we'll help you choose the right package for your vehicle."
         />
 
-        <div className="mx-auto mt-16 grid max-w-4xl gap-6 md:grid-cols-2">
+        <div className="mt-16 grid items-start gap-6 md:grid-cols-2">
           {packages.map((pkg, i) => (
-            <Reveal key={pkg.id} delay={i * 0.1}>
+            <Reveal key={pkg.id} delay={i * 0.1} className={pkg.featured ? "md:pt-0" : "md:pt-20"}>
               <PackageCard pkg={pkg} />
             </Reveal>
           ))}

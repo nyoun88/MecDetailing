@@ -7,9 +7,9 @@ export interface SelectableOption {
 export const serviceOptions: SelectableOption[] = [
   { id: "ceramic-coating", label: "Ceramic Coating" },
   { id: "paint-correction", label: "Paint Correction" },
-  { id: "wheels", label: "Wheels" },
-  { id: "glass", label: "Glass" },
-  { id: "interior", label: "Interior" },
+  { id: "wheel-protection", label: "Wheel Protection" },
+  { id: "glass-protection", label: "Glass Protection" },
+  { id: "interior-protection", label: "Interior Protection" },
 ];
 
 export const conditionOptions: SelectableOption[] = [
@@ -18,23 +18,24 @@ export const conditionOptions: SelectableOption[] = [
   { id: "good", label: "Good" },
   { id: "fair", label: "Fair" },
   { id: "needs-attention", label: "Needs Attention" },
+  { id: "not-sure", label: "Not Sure" },
 ];
 
 export const protectionOptions: SelectableOption[] = [
   {
     id: "essential-protection",
-    label: "Essential Protection",
-    description: "From $975 — Gtechniq Crystal Serum Light, 5-year warranty.",
+    label: "Essential",
+    description: "From $975 — Crystal Serum Light, 5-year warranty.",
   },
   {
     id: "ultimate-protection",
-    label: "Ultimate Protection",
-    description: "From $1,595 — Gtechniq Crystal Serum Ultra, up to 9-year warranty.",
+    label: "Ultimate",
+    description: "From $1,595 — Crystal Serum Ultra, up to 9-year warranty.",
   },
   {
     id: "recommend-for-me",
-    label: "Not Sure — Recommend For Me",
-    description: "We'll suggest the right package once we've reviewed your vehicle.",
+    label: "Not Sure",
+    description: "We'll recommend the right option based on your vehicle.",
   },
 ];
 
@@ -46,7 +47,6 @@ export interface QuoteFormData {
   condition: string;
   protection: string;
   firstName: string;
-  lastName: string;
   phone: string;
   email: string;
   notes: string;
@@ -61,7 +61,6 @@ export const emptyQuoteForm: QuoteFormData = {
   condition: "",
   protection: "",
   firstName: "",
-  lastName: "",
   phone: "",
   email: "",
   notes: "",
@@ -75,3 +74,7 @@ export const quoteSteps = [
   "Protection",
   "Contact",
 ] as const;
+
+export function findOption(options: SelectableOption[], id: string) {
+  return options.find((option) => option.id === id);
+}

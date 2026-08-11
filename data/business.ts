@@ -29,4 +29,6 @@ export const business = {
   accreditation: "Gtechniq Accredited Installer",
   primaryCta: "Get My Free Quote",
   secondaryCta: "View Ceramic Packages",
+  /** Understated technical specifications shown at the base of the hero. */
+  heroSpecs: ["Gtechniq Accredited", "Up To 9 Year Warranty", "Brisbane, QLD"],
 } as const;

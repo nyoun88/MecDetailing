@@ -25,7 +25,7 @@ export function StepCondition({
       </div>
       {errors.condition && <p className="mt-3 text-xs text-red-400">{errors.condition}</p>}
       <p className="mt-5 text-sm text-ink-muted">
-        Not sure? That&rsquo;s completely fine — we&rsquo;ll assess it for you.
+        Don&rsquo;t worry if you&rsquo;re unsure — we&rsquo;ll assess it for you.
       </p>
     </div>
   );

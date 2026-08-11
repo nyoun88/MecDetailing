@@ -4,21 +4,31 @@ import { trustPartners } from "@/data/trust";
 
 export function TrustBar() {
   return (
-    <section className="border-y border-border bg-bg-secondary py-10">
-      <Container>
-        <Reveal className="mb-6 text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-ink-muted md:text-left">
-          Trusted By Automotive Industry Leaders
+    <section className="bg-bg-secondary py-24 md:py-32">
+      <Container className="grid gap-12 md:grid-cols-[1fr_1.3fr] md:gap-16">
+        <Reveal>
+          <h2 className="text-balance text-[clamp(1.9rem,4vw,3rem)] font-bold leading-[1.05] tracking-tight text-ink">
+            Trusted in the automotive industry.
+          </h2>
+          <p className="mt-6 max-w-sm text-base leading-relaxed text-ink-muted">
+            Our experience extends beyond individual vehicles. MEC has
+            worked alongside automotive businesses and industry
+            professionals across Brisbane.
+          </p>
         </Reveal>
-        <div className="no-scrollbar flex items-center gap-10 overflow-x-auto md:justify-between md:gap-6">
-          {trustPartners.map((partner) => (
-            <div
-              key={partner.name}
-              className="flex h-16 shrink-0 items-center justify-center rounded-[8px] border border-border px-8 text-sm font-semibold uppercase tracking-[0.08em] text-ink-muted/80 grayscale transition-colors hover:text-ink"
-            >
-              {partner.name}
-            </div>
-          ))}
-        </div>
+
+        <Reveal delay={0.1}>
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-8 border-t border-border pt-8 sm:grid-cols-3">
+            {trustPartners.map((partner) => (
+              <li
+                key={partner.name}
+                className="text-lg font-semibold uppercase tracking-[0.02em] text-ink-muted/70 transition-colors hover:text-ink"
+              >
+                {partner.name}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </Container>
     </section>
   );

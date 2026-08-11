@@ -30,16 +30,16 @@ export function Gallery() {
   return (
     <section className="bg-bg py-24 md:py-32">
       <Container>
-        <SectionHeading align="center" className="mx-auto" heading="The MEC Standard" />
+        <SectionHeading heading="The MEC Standard" />
 
-        <Reveal delay={0.1} className="mt-10 flex flex-wrap justify-center gap-2">
+        <Reveal delay={0.1} className="mt-10 flex flex-wrap gap-2 border-t border-border pt-8">
           {galleryCategories.map((cat) => (
             <button
               key={cat}
               type="button"
               onClick={() => setCategory(cat)}
               className={cn(
-                "rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] transition-colors",
+                "rounded-[3px] border px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] transition-colors",
                 category === cat
                   ? "border-ink bg-ink text-bg"
                   : "border-border text-ink-muted hover:border-border-strong hover:text-ink",
@@ -57,13 +57,13 @@ export function Gallery() {
               type="button"
               onClick={() => setLightboxIndex(i)}
               className={cn(
-                "group relative overflow-hidden rounded-[10px]",
+                "group relative overflow-hidden rounded-[3px]",
                 spanClasses[item.span ?? "default"],
               )}
             >
               <ImagePlaceholder
                 image={{ src: item.image, alt: item.alt }}
-                className="h-full w-full rounded-[10px] transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                className="h-full w-full rounded-[3px] transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                 label={item.category}
               />
             </button>

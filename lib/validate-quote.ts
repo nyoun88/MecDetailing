@@ -34,7 +34,6 @@ export function validateStep(step: number, data: QuoteFormData): QuoteErrors {
 
   if (step === 4) {
     if (!data.firstName.trim()) errors.firstName = "Enter your first name.";
-    if (!data.lastName.trim()) errors.lastName = "Enter your last name.";
     if (!data.phone.trim()) {
       errors.phone = "Enter a phone number.";
     } else if (!/^[0-9+()\s-]{6,}$/.test(data.phone.trim())) {

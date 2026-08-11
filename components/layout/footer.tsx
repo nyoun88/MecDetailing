@@ -7,58 +7,59 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-bg-secondary">
-      <Container className="grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:py-24">
-        <div>
-          <p className="text-lg font-bold uppercase tracking-[0.18em] text-ink">
-            MEC <span className="text-ink-muted">Detailing</span>
-          </p>
-          <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-            Premium Vehicle Protection
-          </p>
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-ink-muted">
-            Gtechniq-accredited ceramic coating, paint correction and vehicle
-            protection, based in {business.location.display}.
-          </p>
-          <div className="mt-6 flex items-center gap-3">
-            <SocialLink href={business.social.instagram} label="Instagram">
-              IG
-            </SocialLink>
-            <SocialLink href={business.social.facebook} label="Facebook">
-              FB
-            </SocialLink>
-            <SocialLink href={business.social.tiktok} label="TikTok">
-              TT
-            </SocialLink>
+    <footer className="bg-bg">
+      <div className="hairline" />
+      <Container className="py-16 md:py-24">
+        <p className="text-[clamp(2.5rem,9vw,6rem)] font-bold leading-[0.9] tracking-tight text-ink">
+          MEC
+        </p>
+        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+          Premium Vehicle Protection
+        </p>
+
+        <div className="mt-16 grid gap-10 border-t border-border pt-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <div>
+            <p className="text-sm text-ink-muted">{business.location.display}</p>
+            <p className="text-sm text-ink-muted">{business.location.country}</p>
+            <div className="mt-6 flex items-center gap-3">
+              <SocialLink href={business.social.instagram} label="Instagram">
+                IG
+              </SocialLink>
+              <SocialLink href={business.social.facebook} label="Facebook">
+                FB
+              </SocialLink>
+            </div>
+          </div>
+
+          <FooterColumn title="Navigation" links={footerNav} />
+          <FooterColumn title="Services" links={footerServices} />
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-muted">
+              Legal
+            </p>
+            <ul className="mt-4 space-y-3">
+              {legalNav.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-ink transition-colors hover:text-accent"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <FooterColumn title="Navigation" links={footerNav} />
-        <FooterColumn title="Services" links={footerServices} />
-
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-muted">
-            Location
-          </p>
-          <p className="mt-4 text-sm text-ink">{business.location.display}</p>
-          <p className="mt-1 text-sm text-ink">{business.location.country}</p>
-        </div>
-      </Container>
-
-      <div className="border-t border-border">
-        <Container className="flex flex-col gap-4 py-6 text-xs text-ink-muted md:flex-row md:items-center md:justify-between">
+        <div className="mt-16 flex flex-col gap-3 border-t border-border pt-6 text-xs text-ink-muted md:flex-row md:items-center md:justify-between">
           <p>
             © {year} {business.name}. All rights reserved.
           </p>
-          <nav className="flex gap-6">
-            {legalNav.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-ink">
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </Container>
-      </div>
+          <p>Gtechniq Accredited</p>
+        </div>
+      </Container>
     </footer>
   );
 }

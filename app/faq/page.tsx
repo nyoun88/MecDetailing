@@ -15,9 +15,7 @@ export default function FaqPage() {
     <section className="bg-bg pb-28 pt-36 md:pt-44">
       <Container>
         <SectionHeading
-          align="center"
-          className="mx-auto"
-          heading="Questions, Answered."
+          heading="Questions?"
           body="Search for a question, or browse by category below."
           headingAs="h1"
         />

@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Accordion } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import { ArrowLink } from "@/components/ui/arrow-link";
 import { faqs, homepageFaqIds } from "@/data/faqs";
 
 export function FaqPreview() {
@@ -13,10 +13,11 @@ export function FaqPreview() {
   return (
     <section className="bg-bg py-24 md:py-32">
       <Container className="max-w-3xl">
-        <SectionHeading align="center" className="mx-auto" heading="Questions, Answered." />
+        <SectionHeading heading="Questions?" />
 
-        <Reveal delay={0.1} className="mt-14">
+        <Reveal delay={0.1} className="mt-14 border-t border-border">
           <Accordion
+            size="lg"
             items={items.map((faq) => ({
               id: faq.id,
               title: faq.question,
@@ -25,10 +26,8 @@ export function FaqPreview() {
           />
         </Reveal>
 
-        <Reveal delay={0.2} className="mt-10 flex justify-center">
-          <Button href="/faq" variant="outline">
-            View All FAQs
-          </Button>
+        <Reveal delay={0.2} className="mt-10">
+          <ArrowLink href="/faq">View All FAQs</ArrowLink>
         </Reveal>
       </Container>
     </section>

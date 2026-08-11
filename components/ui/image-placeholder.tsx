@@ -24,7 +24,7 @@ export function ImagePlaceholder({
       role="img"
       aria-label={image.alt}
       className={cn(
-        "relative isolate flex items-center justify-center overflow-hidden rounded-[10px] border border-border bg-bg-secondary",
+        "relative isolate flex items-center justify-center overflow-hidden rounded-[3px] border border-border bg-bg-secondary",
         className,
       )}
       style={{

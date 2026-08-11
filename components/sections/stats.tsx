@@ -1,25 +1,31 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
-import { Reveal } from "@/components/ui/reveal";
 import { stats } from "@/data/stats";
+import { EASE, viewport } from "@/lib/motion";
 
 export function Stats() {
   return (
-    <section className="border-y border-border bg-bg py-20 md:py-28">
+    <section className="bg-bg py-24 md:py-32">
       <Container>
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-6">
+        <div className="border-t border-border">
           {stats.map((stat, i) => (
-            <Reveal
+            <motion.div
               key={stat.label}
-              delay={i * 0.08}
-              className="border-l border-border pl-5 text-left first:border-l-0 first:pl-0 md:border-l md:pl-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ duration: 0.7, ease: EASE, delay: i * 0.1 }}
+              className="flex flex-col items-baseline gap-2 border-b border-border py-8 sm:flex-row sm:gap-10 md:py-12"
             >
-              <p className="text-[clamp(2.2rem,5vw,3.75rem)] font-bold leading-none tracking-tight text-ink">
+              <span className="text-[clamp(3.5rem,12vw,8rem)] font-bold leading-[0.85] tracking-tight text-ink">
                 {stat.value}
-              </p>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted">
+              </span>
+              <span className="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted sm:text-base">
                 {stat.label}
-              </p>
-            </Reveal>
+              </span>
+            </motion.div>
           ))}
         </div>
       </Container>

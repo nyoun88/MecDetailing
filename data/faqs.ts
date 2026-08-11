@@ -108,7 +108,7 @@ export const faqCategories: FaqCategory[] = [
   "Booking",
 ];
 
-/** Curated subset shown in the homepage FAQ accordion. */
+/** Curated subset shown in the homepage FAQ accordion, in display order. */
 export const homepageFaqIds = [
   "what-is-ceramic-coating",
   "how-long-does-coating-last",
@@ -116,8 +116,5 @@ export const homepageFaqIds = [
   "crystal-serum-light-vs-ultra",
   "paint-correction-included",
   "warranty-cover",
-  "how-long-does-application-take",
-  "coat-new-vehicle",
   "maintain-coating",
-  "wheel-glass-coating",
 ];

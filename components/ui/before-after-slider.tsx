@@ -18,7 +18,7 @@ export function BeforeAfterSlider({
 
   return (
     <div className={className}>
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[10px] border border-border select-none md:aspect-[16/10]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[3px] border border-border select-none md:aspect-[16/10]">
         <div className="absolute inset-0">
           <ImagePlaceholder image={after} className="h-full w-full rounded-none border-0" label="After — placeholder" />
         </div>

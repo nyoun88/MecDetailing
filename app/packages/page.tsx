@@ -29,12 +29,10 @@ export default function PackagesPage() {
 
       <section className="bg-bg py-24 md:py-32">
         <Container>
-          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2" id="package-cards">
+          <div className="grid items-start gap-6 md:grid-cols-2">
             {packages.map((pkg, i) => (
-              <Reveal key={pkg.id} delay={i * 0.1}>
-                <div id={pkg.id} className="scroll-mt-28">
-                  <PackageCard pkg={pkg} />
-                </div>
+              <Reveal key={pkg.id} delay={i * 0.1} className={pkg.featured ? "" : "md:pt-20"}>
+                <PackageCard pkg={pkg} />
               </Reveal>
             ))}
           </div>
@@ -46,16 +44,18 @@ export default function PackagesPage() {
       <ComparisonTable />
 
       <section className="bg-bg-secondary py-24 md:py-32">
-        <Container className="text-center">
-          <Reveal className="mx-auto max-w-xl">
-            <h2 className="text-balance text-[clamp(1.9rem,4vw,3rem)] font-bold leading-[1.08] tracking-tight text-ink">
-              Ready to protect your vehicle?
+        <Container>
+          <Reveal className="max-w-2xl">
+            <h2 className="text-balance text-[clamp(2.25rem,5.5vw,4.25rem)] font-bold uppercase leading-[0.98] tracking-tight text-ink">
+              Ready to protect
+              <br />
+              your vehicle?
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-ink-muted">
+            <p className="mt-6 max-w-md text-base leading-relaxed text-ink-muted md:text-lg">
               Tell us about your vehicle and we&rsquo;ll recommend the right
               package.
             </p>
-            <div className="mt-8 flex justify-center">
+            <div className="mt-9">
               <Button href="/quote" size="lg" showArrow>
                 Get My Free Quote
               </Button>

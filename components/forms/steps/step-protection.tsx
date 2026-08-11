@@ -25,6 +25,12 @@ export function StepProtection({
         ))}
       </div>
       {errors.protection && <p className="mt-3 text-xs text-red-400">{errors.protection}</p>}
+      {data.protection === "recommend-for-me" && (
+        <p className="mt-5 text-sm text-ink-muted">
+          No problem. We&rsquo;ll recommend the right option based on your
+          vehicle.
+        </p>
+      )}
     </div>
   );
 }

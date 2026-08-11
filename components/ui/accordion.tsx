@@ -16,21 +16,25 @@ export function Accordion({
   items,
   className,
   defaultOpenId,
+  size = "default",
 }: {
   items: AccordionItemData[];
   className?: string;
   defaultOpenId?: string;
+  size?: "default" | "lg";
 }) {
   const [openId, setOpenId] = useState<string | null>(defaultOpenId ?? null);
 
   return (
     <div className={cn("divide-y divide-border", className)}>
-      {items.map((item) => (
+      {items.map((item, i) => (
         <AccordionRow
           key={item.id}
+          index={i}
           item={item}
           isOpen={openId === item.id}
           onToggle={() => setOpenId((current) => (current === item.id ? null : item.id))}
+          size={size}
         />
       ))}
     </div>
@@ -39,12 +43,16 @@ export function Accordion({
 
 function AccordionRow({
   item,
+  index,
   isOpen,
   onToggle,
+  size,
 }: {
   item: AccordionItemData;
+  index: number;
   isOpen: boolean;
   onToggle: () => void;
+  size: "default" | "lg";
 }) {
   const panelId = useId();
 
@@ -56,9 +64,17 @@ function AccordionRow({
           onClick={onToggle}
           aria-expanded={isOpen}
           aria-controls={panelId}
-          className="flex w-full items-center justify-between gap-6 py-5 text-left text-base font-semibold text-ink transition-colors hover:text-accent md:text-lg"
+          className={cn(
+            "flex w-full items-center gap-5 py-5 text-left font-semibold text-ink transition-colors hover:text-accent",
+            size === "lg" ? "gap-6 py-7 text-xl md:text-2xl" : "text-base md:text-lg",
+          )}
         >
-          {item.title}
+          {size === "lg" && (
+            <span className="font-mono text-sm font-normal text-accent">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+          )}
+          <span className="flex-1">{item.title}</span>
           <ChevronDown
             aria-hidden
             className={cn(

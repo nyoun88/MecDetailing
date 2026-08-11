@@ -97,6 +97,7 @@ export default function Navbar() {
           <Button
             href="/quote"
             size="md"
+            showArrow
             onClick={() => track.ctaClicked(business.primaryCta, "navbar")}
           >
             Get A Free Quote
@@ -152,13 +153,16 @@ export default function Navbar() {
               transition={{ duration: 0.35, ease: EASE, delay: 0.05 }}
               className="flex flex-col gap-2 px-6 pt-8"
             >
-              {primaryNav.map((link) => (
+              {primaryNav.map((link, i) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="border-b border-border py-4 text-2xl font-semibold text-ink"
+                  className="flex items-baseline gap-4 border-b border-border py-5 text-3xl font-semibold tracking-tight text-ink"
                 >
+                  <span className="font-mono text-sm font-normal text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   {link.label}
                 </Link>
               ))}
@@ -166,6 +170,7 @@ export default function Navbar() {
                 <Button
                   href="/quote"
                   size="lg"
+                  showArrow
                   className="w-full"
                   onClick={() => {
                     track.ctaClicked(business.primaryCta, "mobile-menu");

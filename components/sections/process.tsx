@@ -1,29 +1,48 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { Reveal } from "@/components/ui/reveal";
 import { processSteps } from "@/data/process";
+import { EASE, viewport } from "@/lib/motion";
 
 export function Process() {
   return (
-    <section className="bg-bg-secondary py-24 md:py-32">
-      <Container>
-        <SectionHeading align="center" className="mx-auto" heading="From Quote To Coating" />
+    <section className="bg-bg py-24 md:py-32">
+      <Container className="grid gap-14 md:grid-cols-[1fr_1.4fr] md:gap-20">
+        <div className="md:sticky md:top-28 md:self-start">
+          <h2 className="text-balance text-[clamp(2.1rem,5vw,3.75rem)] font-bold uppercase leading-[0.98] tracking-tight text-ink">
+            The finish starts
+            <br />
+            before the
+            <br />
+            <span className="text-ink-muted">coating.</span>
+          </h2>
+          <p className="mt-8 max-w-sm text-base leading-relaxed text-ink-muted md:text-lg">
+            A ceramic coating can only perform as well as the surface
+            beneath it.
+          </p>
+        </div>
 
-        <div className="mt-16 grid gap-0 md:grid-cols-5 md:gap-6">
+        <div className="border-t border-border">
           {processSteps.map((step, i) => (
-            <Reveal
+            <motion.div
               key={step.number}
-              delay={i * 0.08}
-              className="relative border-l border-border py-6 pl-6 md:border-l-0 md:border-t md:pl-0 md:pt-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ duration: 0.6, ease: EASE, delay: (i % 3) * 0.08 }}
+              className="grid grid-cols-[3.5rem_1fr] items-baseline gap-6 border-b border-border py-8 sm:grid-cols-[4.5rem_1fr]"
             >
-              <span className="font-mono text-sm text-accent">{step.number}</span>
-              <h3 className="mt-3 text-lg font-bold tracking-tight text-ink">
-                {step.title}
-              </h3>
-              <p className="mt-2 pr-2 text-sm leading-relaxed text-ink-muted">
-                {step.description}
-              </p>
-            </Reveal>
+              <span className="font-mono text-2xl text-accent sm:text-3xl">{step.number}</span>
+              <div>
+                <h3 className="text-xl font-bold uppercase tracking-tight text-ink sm:text-2xl">
+                  {step.title}
+                </h3>
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-muted sm:text-base">
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
           ))}
         </div>
       </Container>

@@ -4,6 +4,13 @@ A production-quality marketing site and lead-generation funnel for MEC
 Detailing Australia (Brisbane), built with Next.js (App Router),
 TypeScript, Tailwind CSS v4 and Framer Motion.
 
+**Design direction: "Precision Protection."** Dark, cinematic, editorial —
+huge uppercase typography, asymmetric split-screens, a scroll-pinned
+horizontal section, sticky image panels and near-black tokens
+(`#050505` / `#0C0C0C` / `#121212`, `#F4F4F4` ink, `#858585` muted, a
+single restrained `#C7C7C7` accent). Photography (currently placeholders)
+is meant to carry the visual richness, not colour or iconography.
+
 ## Getting started
 
 ```bash
