@@ -37,6 +37,24 @@ npx tsc --noEmit  # type-check
 | `/quote` | 5-step lead-capture funnel → `/api/quote` |
 | `/privacy-policy`, `/terms` | Placeholder legal pages |
 
+## Brand assets
+
+The real MEC logo is in use (navbar, footer, favicon, app icons). Source
+files live in two places:
+
+- `brand-source/mec-logo-original.png` — the original artwork as supplied,
+  untouched. Kept outside `/public` since it's a working source file, not
+  something the site serves.
+- `public/brand/` — derived assets: `logo-full-light.png` (the lockup,
+  inverted for dark surfaces — what the navbar/footer actually render) and
+  `logo-full-dark.png` (original dark-on-transparent, for any future light
+  surface), plus the favicon/app-icon set generated from the logo's "MDA"
+  monogram (the full car-silhouette lockup doesn't survive downscaling to
+  16–32px, so the favicon uses the bolder monogram instead).
+
+To swap in an updated logo: replace `brand-source/mec-logo-original.png`
+and regenerate the derived files (transparency + inversion) the same way.
+
 ## Editing content
 
 Nothing in `/components` should be edited to change copy, prices, or

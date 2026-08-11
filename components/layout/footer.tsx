@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { Logo } from "@/components/ui/logo";
 import { business } from "@/data/business";
 import { footerNav, footerServices, legalNav } from "@/data/nav";
 
@@ -10,10 +11,8 @@ export default function Footer() {
     <footer className="bg-bg">
       <div className="hairline" />
       <Container className="py-16 md:py-24">
-        <p className="text-[clamp(2.5rem,9vw,6rem)] font-bold leading-[0.9] tracking-tight text-ink">
-          MEC
-        </p>
-        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+        <Logo className="h-12 w-auto md:h-16" />
+        <p className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-accent">
           Premium Vehicle Protection
         </p>
 
@@ -57,7 +56,7 @@ export default function Footer() {
           <p>
             © {year} {business.name}. All rights reserved.
           </p>
-          <p>Gtechniq Accredited</p>
+          <p>Since 2020 · Gtechniq Accredited</p>
         </div>
       </Container>
     </footer>

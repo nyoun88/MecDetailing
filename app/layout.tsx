@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     title: `Ceramic Coating Brisbane | ${business.name}`,
     description:
       "Premium Gtechniq ceramic coating in Brisbane, professionally installed by accredited specialists.",
+    images: ["/brand/icon-512.png"],
   },
   robots: {
     index: true,
@@ -48,8 +49,9 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "AutoDetailing",
   name: business.name,
-  image: `${business.siteUrl}/images/hero-vehicle.jpg`,
+  image: `${business.siteUrl}/brand/icon-512.png`,
   url: business.siteUrl,
+  foundingDate: String(business.foundedYear),
   areaServed: {
     "@type": "City",
     name: "Brisbane",

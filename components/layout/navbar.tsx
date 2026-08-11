@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
 import { primaryNav } from "@/data/nav";
 import { business } from "@/data/business";
 import { track } from "@/lib/analytics";
@@ -71,11 +72,8 @@ export default function Navbar() {
       )}
     >
       <Container className="flex h-20 items-center justify-between md:h-24">
-        <Link
-          href="/"
-          className="text-sm font-bold uppercase tracking-[0.18em] text-ink"
-        >
-          MEC <span className="text-ink-muted">Detailing</span>
+        <Link href="/" className="shrink-0">
+          <Logo />
         </Link>
 
         <nav className="hidden items-center gap-10 md:flex">
@@ -129,12 +127,8 @@ export default function Navbar() {
             className="fixed inset-0 z-[60] bg-bg md:hidden"
           >
             <Container className="flex h-20 items-center justify-between">
-              <Link
-                href="/"
-                onClick={() => setMobileOpen(false)}
-                className="text-sm font-bold uppercase tracking-[0.18em] text-ink"
-              >
-                MEC <span className="text-ink-muted">Detailing</span>
+              <Link href="/" onClick={() => setMobileOpen(false)} className="shrink-0">
+                <Logo />
               </Link>
               <button
                 ref={closeButtonRef}

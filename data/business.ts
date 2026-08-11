@@ -27,6 +27,8 @@ export const business = {
     tiktok: "#",
   },
   accreditation: "Gtechniq Accredited Installer",
+  /** Confirmed by the supplied logo artwork ("Since 2020"). */
+  foundedYear: 2020,
   primaryCta: "Get My Free Quote",
   secondaryCta: "View Ceramic Packages",
   /** Understated technical specifications shown at the base of the hero. */
