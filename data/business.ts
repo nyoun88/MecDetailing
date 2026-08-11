@@ -16,10 +16,10 @@ export const business = {
   },
   // Placeholder contact details — replace with the real values when supplied.
   contact: {
-    phone: "TBC — add phone number",
-    phoneHref: "tel:", // leave empty until a real number is supplied
-    email: "TBC — add email address",
-    emailHref: "mailto:",
+    phone: "",
+    phoneHref: "", // e.g. "tel:+61400000000" once a real number is supplied
+    email: "",
+    emailHref: "", // e.g. "mailto:hello@mecdetailing.com.au" once supplied
   },
   social: {
     instagram: "#",

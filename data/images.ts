@@ -48,4 +48,28 @@ export const images = {
     src: "/images/packages-hero.jpg",
     alt: "Vehicle prepared for ceramic coating application",
   },
+  experience: {
+    src: "/images/why-mec-experience.jpg",
+    alt: "MEC Detailing specialist working on a vehicle panel",
+  },
+  accreditation: {
+    src: "/images/why-mec-accreditation.jpg",
+    alt: "Gtechniq accredited ceramic coating application",
+  },
+  industry: {
+    src: "/images/why-mec-industry.jpg",
+    alt: "Vehicles at an automotive dealership partner site",
+  },
+  preparation: {
+    src: "/images/why-mec-preparation.jpg",
+    alt: "Paint decontamination and preparation before coating",
+  },
+  products: {
+    src: "/images/why-mec-products.jpg",
+    alt: "Gtechniq ceramic coating products laid out for application",
+  },
+  aftercare: {
+    src: "/images/why-mec-aftercare.jpg",
+    alt: "Finished vehicle handover after ceramic coating",
+  },
 } satisfies Record<string, ImageSlot>;
