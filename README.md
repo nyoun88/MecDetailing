@@ -1,0 +1,80 @@
+# MEC Detailing Australia — Website
+
+A production-quality marketing site and lead-generation funnel for MEC
+Detailing Australia (Brisbane), built with Next.js (App Router),
+TypeScript, Tailwind CSS v4 and Framer Motion.
+
+## Getting started
+
+```bash
+npm install
+npm run dev
+```
+
+Visit `http://localhost:3000`.
+
+```bash
+npm run build   # production build
+npm run lint    # eslint
+npx tsc --noEmit  # type-check
+```
+
+## Pages
+
+| Route | Purpose |
+|---|---|
+| `/` | Homepage — full funnel from hero through to FAQ and final CTA |
+| `/packages` | Ceramic package comparison, upgrades, Gtechniq explainer |
+| `/why-mec` | Brand/credibility story |
+| `/faq` | Full searchable FAQ, grouped by category |
+| `/quote` | 5-step lead-capture funnel → `/api/quote` |
+| `/privacy-policy`, `/terms` | Placeholder legal pages |
+
+## Editing content
+
+Nothing in `/components` should be edited to change copy, prices, or
+stats — everything the business would want to change lives in
+`/data/*.ts`:
+
+- `business.ts` — name, location, contact details, social links
+- `packages.ts` — package pricing, inclusions, upgrades, comparison table
+- `stats.ts`, `benefits.ts`, `process.ts` — homepage credibility content
+- `faqs.ts` — every FAQ, categorised
+- `reviews.ts` — **empty by design.** No reviews were supplied, so none
+  were invented. Add real reviews here and the homepage/FAQ sections
+  pick them up automatically.
+- `trust.ts` — logos in the "trusted by" bar
+- `gallery.ts` — project gallery items
+- `images.ts` — every image slot the site uses, with the exact filename
+  it expects under `/public/images/`
+
+## What's still a placeholder
+
+This is a complete, working build — but several things were
+intentionally left as clearly-marked placeholders rather than invented,
+per the brief:
+
+- **Phone number & email** (`data/business.ts` → `contact`) — currently
+  empty; the quote success screen and footer adapt once these are filled in.
+- **Photography** — every image on the site is a labelled placeholder
+  (`components/ui/image-placeholder.tsx`) showing the filename it
+  expects. Drop real photos into `/public/images/` using those exact
+  names and swap the placeholder for `next/image` in each section.
+- **Customer reviews** (`data/reviews.ts`) — empty until real reviews
+  exist.
+- **Legal copy** (`/privacy-policy`, `/terms`) — structural pages only;
+  need real policy text.
+- **Quote submissions** (`app/api/quote/route.ts`) — validates and
+  accepts submissions but doesn't yet send anywhere. Wire in an email
+  provider or CRM webhook using environment variables.
+- **Analytics** (`lib/analytics.ts`) — event tracking calls
+  (`quote_started`, `quote_submitted`, `cta_clicked`, etc.) are wired
+  throughout the site and log in development, but no provider is
+  connected. Set `NEXT_PUBLIC_ANALYTICS_ENABLED=true` and fill in
+  `dispatch()` once a provider (GA4, Meta Pixel, etc.) is chosen.
+- **Social links** (`data/business.ts` → `social`) — placeholder `#` hrefs.
+
+## Stack
+
+Next.js 16 (App Router, Turbopack) · TypeScript · Tailwind CSS v4 ·
+Framer Motion · lucide-react
