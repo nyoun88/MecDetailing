@@ -1,3 +1,6 @@
+import { packages } from "@/data/packages";
+import { formatCurrency } from "@/lib/utils";
+
 export interface SelectableOption {
   id: string;
   label: string;
@@ -22,16 +25,11 @@ export const conditionOptions: SelectableOption[] = [
 ];
 
 export const protectionOptions: SelectableOption[] = [
-  {
-    id: "essential-protection",
-    label: "Essential",
-    description: "From $975 — Crystal Serum Light, 5-year warranty.",
-  },
-  {
-    id: "ultimate-protection",
-    label: "Ultimate",
-    description: "From $1,595 — Crystal Serum Ultra, up to 9-year warranty.",
-  },
+  ...packages.map((pkg) => ({
+    id: pkg.id,
+    label: pkg.label,
+    description: `From ${formatCurrency(pkg.priceFrom)} — ${pkg.product}, ${pkg.warranty.replace("Gtechniq Warranty", "warranty").toLowerCase()}.`,
+  })),
   {
     id: "recommend-for-me",
     label: "Not Sure",

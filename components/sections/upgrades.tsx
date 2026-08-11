@@ -32,7 +32,10 @@ export function Upgrades() {
         <div className="grid gap-6 sm:grid-cols-2">
           {optionalUpgrades.map((upgrade) => (
             <div key={upgrade.id}>
-              <p className="text-sm font-semibold text-ink">{upgrade.name}</p>
+              <div className="flex items-baseline justify-between gap-4">
+                <p className="text-sm font-semibold text-ink">{upgrade.name}</p>
+                <p className="font-mono text-sm text-accent">{upgrade.priceLabel}</p>
+              </div>
               <p className="mt-1 text-sm text-ink-muted">{upgrade.description}</p>
             </div>
           ))}

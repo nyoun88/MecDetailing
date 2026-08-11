@@ -36,6 +36,13 @@ export const faqs: Faq[] = [
       "Both are professional Gtechniq ceramic coating systems installed by accredited applicators. Crystal Serum Light is featured in our Essential Protection package with a 5-year Gtechniq warranty, while Crystal Serum Ultra is featured in our Ultimate Protection package with a warranty of up to 9 years. Your installer can talk through which suits your vehicle and budget.",
   },
   {
+    id: "30ml-vs-50ml",
+    category: "Ceramic Coating",
+    question: "What's the difference between the 30ml and 50ml options?",
+    answer:
+      "Both sizes use the same Gtechniq product and carry the same warranty term — 50ml simply covers a larger vehicle or allows for a thicker application. Your installer can confirm which size suits your vehicle.",
+  },
+  {
     id: "coat-new-vehicle",
     category: "Ceramic Coating",
     question: "Can you coat a brand-new vehicle?",
@@ -47,21 +54,21 @@ export const faqs: Faq[] = [
     category: "Ceramic Coating",
     question: "Do you offer wheel and glass coating?",
     answer:
-      "Yes. Wheel coating and glass coating are included in both our Essential and Ultimate packages, and can also be discussed as part of a custom quote.",
+      "Yes. Wheel Kit is available as an optional add-on to either package for $400, applying a dedicated ceramic coating to your wheel faces. Glass coating is also available — ask us for pricing as part of your quote.",
   },
   {
     id: "paint-correction-included",
     category: "Paint Correction",
     question: "Is paint correction included?",
     answer:
-      "Paint correction is included in both the Essential Protection and Ultimate Protection packages. The extent of correction required depends on your paint's condition and is confirmed during your vehicle assessment.",
+      "Both packages include a wash, clay decontamination and a 1-hour machine buff before coating — enough to address light imperfections in most cases. More extensive multi-stage correction can be quoted separately once your paint has been assessed.",
   },
   {
     id: "what-does-correction-fix",
     category: "Paint Correction",
-    question: "What does paint correction address?",
+    question: "What does the included buff address?",
     answer:
-      "Paint correction is a machine polishing process used to reduce common imperfections such as swirl marks, light scratches, water spots, oxidation and paint haze before a ceramic coating is applied.",
+      "The included 1-hour machine buff is a light polishing pass that helps reduce minor imperfections such as light swirl marks and haze. Deeper defects like heavier scratches, oxidation or water spot etching may need additional correction time, quoted separately.",
   },
   {
     id: "warranty-cover",
