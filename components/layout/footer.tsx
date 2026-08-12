@@ -18,8 +18,22 @@ export default function Footer() {
 
         <div className="mt-16 grid gap-10 border-t border-border pt-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <p className="text-sm text-ink-muted">{business.location.display}</p>
+            <p className="text-sm text-ink-muted">{business.address.display}</p>
             <p className="text-sm text-ink-muted">{business.location.country}</p>
+            <div className="mt-4 space-y-1">
+              <a
+                href={business.contact.phoneHref}
+                className="block text-sm text-ink transition-colors hover:text-accent"
+              >
+                {business.contact.phone}
+              </a>
+              <a
+                href={business.contact.emailHref}
+                className="block text-sm text-ink transition-colors hover:text-accent"
+              >
+                {business.contact.email}
+              </a>
+            </div>
             <div className="mt-6 flex items-center gap-3">
               <SocialLink href={business.social.instagram} label="Instagram">
                 IG

@@ -58,10 +58,14 @@ const localBusinessSchema = {
   },
   address: {
     "@type": "PostalAddress",
-    addressLocality: business.location.city,
-    addressRegion: business.location.state,
+    streetAddress: `${business.address.unit}/${business.address.street}`,
+    addressLocality: business.address.suburb,
+    addressRegion: business.address.state,
+    postalCode: business.address.postcode,
     addressCountry: "AU",
   },
+  telephone: business.contact.phone,
+  email: business.contact.email,
   priceRange: "$$",
 };
 

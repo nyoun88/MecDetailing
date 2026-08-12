@@ -7,19 +7,28 @@
 export const business = {
   name: "MEC Detailing Australia",
   shortName: "MEC Detailing",
-  siteUrl: "https://www.mecdetailing.com.au",
+  siteUrl: "https://mecdetailingaust.com.au",
   location: {
     city: "Brisbane",
     state: "Queensland",
     country: "Australia",
     display: "Brisbane, Queensland",
   },
-  // Placeholder contact details — replace with the real values when supplied.
+  address: {
+    unit: "5",
+    street: "77 Araluen Street",
+    suburb: "Kedron",
+    state: "QLD",
+    postcode: "4031",
+    country: "Australia",
+    /** "5/77 Araluen Street" — Australian unit/street-number convention. */
+    display: "5/77 Araluen Street, Kedron QLD 4031",
+  },
   contact: {
-    phone: "",
-    phoneHref: "", // e.g. "tel:+61400000000" once a real number is supplied
-    email: "",
-    emailHref: "", // e.g. "mailto:hello@mecdetailing.com.au" once supplied
+    phone: "0409 390 929",
+    phoneHref: "tel:+61409390929",
+    email: "angelo@mecdetailingaust.com.au",
+    emailHref: "mailto:angelo@mecdetailingaust.com.au",
   },
   social: {
     instagram: "#",
