@@ -16,15 +16,17 @@ export function Photo({
   sizes = "100vw",
   objectPosition,
   priority,
+  label,
 }: {
   image: ImageSlot;
   className?: string;
   sizes?: string;
   objectPosition?: string;
   priority?: boolean;
+  label?: string;
 }) {
   if (!image.ready) {
-    return <ImagePlaceholder image={image} className={className} />;
+    return <ImagePlaceholder image={image} className={className} label={label} />;
   }
 
   return (

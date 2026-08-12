@@ -6,7 +6,7 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
+import { Photo } from "@/components/ui/photo";
 import { cn } from "@/lib/utils";
 import { EASE } from "@/lib/motion";
 import { galleryCategories, galleryItems, type GalleryCategory } from "@/data/gallery";
@@ -61,9 +61,10 @@ export function Gallery() {
                 spanClasses[item.span ?? "default"],
               )}
             >
-              <ImagePlaceholder
-                image={{ src: item.image, alt: item.alt }}
+              <Photo
+                image={{ src: item.image, alt: item.alt, ready: item.ready }}
                 className="h-full w-full rounded-[3px] transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                sizes="(min-width: 768px) 25vw, 50vw"
                 label={item.category}
               />
             </button>
@@ -113,9 +114,10 @@ export function Gallery() {
               transition={{ duration: 0.3, ease: EASE }}
               className="w-full max-w-3xl"
             >
-              <ImagePlaceholder
-                image={{ src: activeItem.image, alt: activeItem.alt }}
+              <Photo
+                image={{ src: activeItem.image, alt: activeItem.alt, ready: activeItem.ready }}
                 className="aspect-[4/3] w-full"
+                sizes="(min-width: 768px) 60vw, 100vw"
                 label={activeItem.category}
               />
             </motion.div>
