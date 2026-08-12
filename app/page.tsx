@@ -9,7 +9,6 @@ import { PackagesSection } from "@/components/sections/packages-section";
 import { PaintCorrection } from "@/components/sections/paint-correction";
 import { Gallery } from "@/components/sections/gallery";
 import { Stats } from "@/components/sections/stats";
-import { Reviews } from "@/components/sections/reviews";
 import { FaqPreview } from "@/components/sections/faq-preview";
 import { FinalCta } from "@/components/sections/final-cta";
 
@@ -33,7 +32,6 @@ export default function Home() {
       <PaintCorrection />
       <Gallery />
       <Stats />
-      <Reviews />
       <FaqPreview />
       <FinalCta />
     </>
