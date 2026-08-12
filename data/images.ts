@@ -107,4 +107,29 @@ export const images = {
     alt: "Close-up gloss reflection on freshly coated paint",
     ready: true,
   },
+  detailingHero: {
+    src: "/images/benefit-maintenance.jpg",
+    alt: "SUV covered in snow foam during a wash",
+    ready: true,
+  },
+  detailingFull: {
+    src: "/images/gallery/detailing-03.jpg",
+    alt: "Lamborghini Huracan covered in snow foam during a wash",
+    ready: true,
+  },
+  detailingInterior: {
+    src: "/images/gallery/interior-01.jpg",
+    alt: "Tesla Model Y interior detail",
+    ready: true,
+  },
+  detailingCorrection: {
+    src: "/images/gallery/ceramic-03.jpg",
+    alt: "Gloss reflection on a freshly polished rear quarter panel",
+    ready: true,
+  },
+  detailingMini: {
+    src: "/images/why-mec-experience.jpg",
+    alt: "Hyundai Tucson covered in snow foam during a wash",
+    ready: true,
+  },
 } satisfies Record<string, ImageSlot>;
