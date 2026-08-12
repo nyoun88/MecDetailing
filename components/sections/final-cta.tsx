@@ -1,16 +1,20 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
 import { images } from "@/data/images";
 
 export function FinalCta() {
   return (
     <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-bg">
       <div className="absolute inset-0">
-        <ImagePlaceholder
-          image={images.finalCta}
-          className="h-full w-full rounded-none border-0"
+        <Image
+          src={images.finalCta.src}
+          alt={images.finalCta.alt}
+          fill
+          sizes="100vw"
+          className="object-cover"
+          style={{ objectPosition: "center 60%" }}
         />
         <div className="absolute inset-0 bg-bg/85" />
         <div className="grain-overlay" />

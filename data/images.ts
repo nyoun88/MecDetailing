@@ -26,7 +26,7 @@ export const images = {
   },
   finalCta: {
     src: "/images/final-cta.jpg",
-    alt: "Freshly ceramic-coated vehicle in studio lighting",
+    alt: "Silver Isuzu SUV parked in a driveway",
   },
   whyMecHero: {
     src: "/images/why-mec-hero.jpg",
