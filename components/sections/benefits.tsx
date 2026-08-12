@@ -87,7 +87,7 @@ function BenefitPanel({
     <div
       className={
         compact
-          ? "relative w-[80vw] shrink-0 overflow-hidden rounded-[3px] border border-border"
+          ? "relative aspect-[4/5] w-[80vw] shrink-0 overflow-hidden rounded-[3px] border border-border"
           : "relative h-[65vh] w-[70vw] shrink-0 overflow-hidden rounded-[3px] border border-border md:w-[42vw] lg:w-[34vw]"
       }
     >
