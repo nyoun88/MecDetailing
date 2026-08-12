@@ -6,6 +6,7 @@ import { PageHero } from "@/components/sections/packages-hero";
 import { PackageCard } from "@/components/sections/package-card";
 import { Upgrades } from "@/components/sections/upgrades";
 import { WhyGtechniq } from "@/components/sections/why-gtechniq";
+import { ProductComparison } from "@/components/sections/product-comparison";
 import { ComparisonTable } from "@/components/sections/comparison-table";
 import { packages } from "@/data/packages";
 import { images } from "@/data/images";
@@ -42,6 +43,7 @@ export default function PackagesPage() {
 
       <Upgrades />
       <WhyGtechniq />
+      <ProductComparison />
       <ComparisonTable />
 
       <section className="bg-bg-secondary py-24 md:py-32">
