@@ -13,20 +13,25 @@ export interface ImageSlot {
   /** Intended path once real photography is supplied. */
   src: string;
   alt: string;
+  /** True once the real file at `src` has actually been supplied. */
+  ready?: boolean;
 }
 
 export const images = {
   heroVehicle: {
     src: "/images/hero-vehicle.jpg",
     alt: "Premium detailed vehicle finished with ceramic coating",
+    ready: true,
   },
   waterBeading: {
     src: "/images/water-beading.jpg",
     alt: "Water beading on a hydrophobic ceramic-coated panel",
+    ready: true,
   },
   finalCta: {
     src: "/images/final-cta.jpg",
     alt: "Silver Isuzu SUV parked in a driveway",
+    ready: true,
   },
   whyMecHero: {
     src: "/images/why-mec-hero.jpg",
@@ -71,6 +76,7 @@ export const images = {
   benefitGloss: {
     src: "/images/benefit-gloss.jpg",
     alt: "Deep gloss reflection on ceramic-coated paint",
+    ready: true,
   },
   benefitHydrophobic: {
     src: "/images/benefit-hydrophobic.jpg",

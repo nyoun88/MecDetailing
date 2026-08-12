@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
+import { Photo } from "@/components/ui/photo";
 import { images } from "@/data/images";
 import { benefits } from "@/data/benefits";
 
@@ -91,7 +91,11 @@ function BenefitPanel({
           : "relative h-[65vh] w-[70vw] shrink-0 overflow-hidden rounded-[3px] border border-border md:w-[42vw] lg:w-[34vw]"
       }
     >
-      <ImagePlaceholder image={images[benefit.image]} className="h-full w-full rounded-none border-0" />
+      <Photo
+        image={images[benefit.image]}
+        className="h-full w-full rounded-none border-0"
+        sizes="(min-width: 768px) 42vw, 80vw"
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/30 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-7">
         <span className="font-mono text-xs text-accent">{benefit.index}</span>
