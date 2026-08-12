@@ -90,7 +90,8 @@ export const images = {
   },
   benefitProtection: {
     src: "/images/benefit-protection.jpg",
-    alt: "Vehicle parked outdoors, protected by ceramic coating",
+    alt: "Range Rover Sport finished in gloss black, parked in a driveway",
+    ready: true,
   },
   quoteSidebar: {
     src: "/images/quote-sidebar.jpg",
