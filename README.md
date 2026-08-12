@@ -26,6 +26,28 @@ npm run lint    # eslint
 npx tsc --noEmit  # type-check
 ```
 
+## Environment variables
+
+Copy `.env.example` to `.env.local` and fill in:
+
+- **`RESEND_API_KEY`** — required for quote-form enquiries
+  (`app/api/quote/route.ts`) to actually email
+  `angelo@mecdetailingaust.com.au` instead of just logging to the
+  server console. Get a free key at [resend.com](https://resend.com)
+  (no credit card, 100 emails/day / 3,000/month free tier — plenty for
+  a quote form). Without this set, the form still works for the
+  customer but enquiries are only logged, not delivered.
+- **`QUOTE_FROM_EMAIL`** — optional. Defaults to Resend's shared test
+  address (`onboarding@resend.dev`), which works immediately with no
+  setup. For a branded from-address like
+  `enquiries@mecdetailingaust.com.au`, verify the `mecdetailingaust.com.au`
+  domain in the Resend dashboard first (adds a few DNS records at
+  GoDaddy, similar to the domain-linking steps for Vercel) — Resend
+  won't send from an unverified domain.
+
+In production (Vercel), add these under **Project → Settings →
+Environment Variables** rather than committing `.env.local`.
+
 ## Pages
 
 | Route | Purpose |
@@ -79,8 +101,6 @@ This is a complete, working build — but several things were
 intentionally left as clearly-marked placeholders rather than invented,
 per the brief:
 
-- **Phone number & email** (`data/business.ts` → `contact`) — currently
-  empty; the quote success screen and footer adapt once these are filled in.
 - **Photography** — every image on the site is a labelled placeholder
   (`components/ui/image-placeholder.tsx`) showing the filename it
   expects. Drop real photos into `/public/images/` using those exact
@@ -89,9 +109,6 @@ per the brief:
   exist.
 - **Legal copy** (`/privacy-policy`, `/terms`) — structural pages only;
   need real policy text.
-- **Quote submissions** (`app/api/quote/route.ts`) — validates and
-  accepts submissions but doesn't yet send anywhere. Wire in an email
-  provider or CRM webhook using environment variables.
 - **Analytics** (`lib/analytics.ts`) — event tracking calls
   (`quote_started`, `quote_submitted`, `cta_clicked`, etc.) are wired
   throughout the site and log in development, but no provider is
