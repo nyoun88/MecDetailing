@@ -85,7 +85,8 @@ export const images = {
   },
   benefitMaintenance: {
     src: "/images/benefit-maintenance.jpg",
-    alt: "Vehicle being washed after ceramic coating",
+    alt: "SUV covered in snow foam during a maintenance wash",
+    ready: true,
   },
   benefitProtection: {
     src: "/images/benefit-protection.jpg",
