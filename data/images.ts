@@ -80,7 +80,8 @@ export const images = {
   },
   benefitHydrophobic: {
     src: "/images/benefit-hydrophobic.jpg",
-    alt: "Water sheeting off a hydrophobic ceramic-coated surface",
+    alt: "Water beading on a freshly washed ceramic-coated panel and wheel",
+    ready: true,
   },
   benefitMaintenance: {
     src: "/images/benefit-maintenance.jpg",
