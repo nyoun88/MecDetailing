@@ -35,7 +35,8 @@ export const images = {
   },
   whyMecHero: {
     src: "/images/why-mec-hero.jpg",
-    alt: "MEC Detailing specialist assessing a vehicle's paintwork",
+    alt: "Lamborghini Huracan Spyder finished with ceramic coating",
+    ready: true,
   },
   packagesHero: {
     src: "/images/packages-hero.jpg",
@@ -48,7 +49,8 @@ export const images = {
   },
   accreditation: {
     src: "/images/why-mec-accreditation.jpg",
-    alt: "Gtechniq accredited ceramic coating application",
+    alt: "Toyota RAV4 in the MEC studio, Gtechniq product range on the wall",
+    ready: true,
   },
   industry: {
     src: "/images/why-mec-industry.jpg",
@@ -57,7 +59,8 @@ export const images = {
   },
   preparation: {
     src: "/images/why-mec-preparation.jpg",
-    alt: "Paint decontamination and preparation before coating",
+    alt: "Technician inspecting paint finish under an LED swirl-finder light",
+    ready: true,
   },
   products: {
     src: "/images/why-mec-products.jpg",

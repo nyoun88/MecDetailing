@@ -24,6 +24,7 @@ export default function WhyMecPage() {
         heading="Built Around The Finish"
         body="Every part of how we work exists to protect one thing: the condition of your paint, long after the coating goes on."
         image={images.whyMecHero}
+        imagePosition="62% 55%"
       />
 
       <TrustBar />

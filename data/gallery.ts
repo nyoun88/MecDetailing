@@ -28,9 +28,9 @@ export const galleryItems: GalleryItem[] = [
   { id: "g3", category: "Detailing", image: "/images/gallery/detailing-01.jpg", alt: "Chevrolet Silverado grille detail", ready: true },
   { id: "g4", category: "Wheels", image: "/images/gallery/wheels-01.jpg", alt: "Kia alloy wheel finished with ceramic coating", ready: true },
   { id: "g5", category: "Interior", image: "/images/gallery/interior-01.jpg", alt: "Interior protection detailing", span: "wide" },
-  { id: "g6", category: "Ceramic", image: "/images/gallery/ceramic-02.jpg", alt: "Ceramic coated panel gloss" },
+  { id: "g6", category: "Ceramic", image: "/images/gallery/ceramic-02.jpg", alt: "Ford Ranger front fender and wheel ceramic coating detail", ready: true },
   { id: "g7", category: "Paint Correction", image: "/images/gallery/correction-02.jpg", alt: "Swirl mark removal" },
-  { id: "g8", category: "Detailing", image: "/images/gallery/detailing-02.jpg", alt: "Exterior detail finish", span: "tall" },
+  { id: "g8", category: "Detailing", image: "/images/gallery/detailing-02.jpg", alt: "Nissan Patrol front fender and wheel detail", span: "tall", ready: true },
   { id: "g9", category: "Wheels", image: "/images/gallery/wheels-02.jpg", alt: "BMW wheel and fender ceramic coating detail", ready: true },
 ];
 
