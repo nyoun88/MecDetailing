@@ -2,7 +2,7 @@
 
 import { Check } from "lucide-react";
 import { ArrowLink } from "@/components/ui/arrow-link";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
+import { Photo } from "@/components/ui/photo";
 import { images } from "@/data/images";
 import { cn, formatCurrency } from "@/lib/utils";
 import type { CeramicPackage } from "@/data/packages";
@@ -26,9 +26,10 @@ export function PackageCard({ pkg }: { pkg: CeramicPackage }) {
       )}
     >
       <div className="absolute inset-0">
-        <ImagePlaceholder
+        <Photo
           image={images[pkg.image]}
           className="h-full w-full rounded-none border-0 transition-transform duration-700 ease-out group-hover:scale-105"
+          sizes="(min-width: 768px) 50vw, 100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/75 to-bg/25 transition-opacity duration-500 group-hover:from-bg/95 group-hover:via-bg/85" />
       </div>

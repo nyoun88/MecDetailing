@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
+import { Photo } from "@/components/ui/photo";
 import { cn } from "@/lib/utils";
 import type { WhyMecSection } from "@/data/why-mec";
 
@@ -22,7 +22,7 @@ export function EditorialSplit({
         )}
       >
         <Reveal className={cn(reverse && "md:order-2")}>
-          <ImagePlaceholder image={section.image} className="aspect-[4/5] w-full" />
+          <Photo image={section.image} className="aspect-[4/5] w-full" sizes="(min-width: 768px) 50vw, 100vw" />
         </Reveal>
 
         <Reveal delay={0.1} className={cn(reverse && "md:order-1")}>

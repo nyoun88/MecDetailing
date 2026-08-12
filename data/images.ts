@@ -52,7 +52,8 @@ export const images = {
   },
   industry: {
     src: "/images/why-mec-industry.jpg",
-    alt: "Vehicles at an automotive dealership partner site",
+    alt: "BYD Shark, one of the dealership brands MEC Detailing works with",
+    ready: true,
   },
   preparation: {
     src: "/images/why-mec-preparation.jpg",
@@ -60,7 +61,8 @@ export const images = {
   },
   products: {
     src: "/images/why-mec-products.jpg",
-    alt: "Gtechniq ceramic coating products laid out for application",
+    alt: "Gtechniq Crystal Serum Ultra being applied to a vehicle",
+    ready: true,
   },
   aftercare: {
     src: "/images/why-mec-aftercare.jpg",
@@ -68,11 +70,13 @@ export const images = {
   },
   essentialProtection: {
     src: "/images/package-essential.jpg",
-    alt: "Vehicle finished with the Essential Protection ceramic package",
+    alt: "Purple Holden Torana SS with the engine bay open",
+    ready: true,
   },
   ultimateProtection: {
     src: "/images/package-ultimate.jpg",
-    alt: "Vehicle finished with the Ultimate Protection ceramic package",
+    alt: "Grey 4x4 ute fitted with a canopy, roof rack and off-road wheels",
+    ready: true,
   },
   benefitGloss: {
     src: "/images/benefit-gloss.jpg",
@@ -96,6 +100,7 @@ export const images = {
   },
   quoteSidebar: {
     src: "/images/quote-sidebar.jpg",
-    alt: "Vehicle prepared for ceramic coating application",
+    alt: "Close-up gloss reflection on freshly coated paint",
+    ready: true,
   },
 } satisfies Record<string, ImageSlot>;

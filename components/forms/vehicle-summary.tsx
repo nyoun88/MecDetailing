@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
+import { Photo } from "@/components/ui/photo";
 import { images } from "@/data/images";
 import { cn } from "@/lib/utils";
 import {
@@ -64,7 +64,7 @@ export function VehicleSummaryPanel({ data }: { data: QuoteFormData }) {
   return (
     <aside className="hidden md:sticky md:top-28 md:block md:self-start">
       <div className="overflow-hidden rounded-[3px] border border-border">
-        <ImagePlaceholder image={images.quoteSidebar} className="aspect-[4/3] w-full rounded-none border-0" />
+        <Photo image={images.quoteSidebar} className="aspect-[4/3] w-full rounded-none border-0" sizes="(min-width: 768px) 33vw, 100vw" />
         <div className="bg-bg-card p-7">
           <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
             Your Selection
