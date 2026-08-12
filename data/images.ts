@@ -20,21 +20,9 @@ export const images = {
     src: "/images/hero-vehicle.jpg",
     alt: "Premium detailed vehicle finished with ceramic coating",
   },
-  valueProp: {
-    src: "/images/paint-correction.jpg",
-    alt: "Close-up of ceramic-coated paintwork reflecting studio light",
-  },
   waterBeading: {
     src: "/images/water-beading.jpg",
     alt: "Water beading on a hydrophobic ceramic-coated panel",
-  },
-  ceramicApplication: {
-    src: "/images/ceramic-application.jpg",
-    alt: "Ceramic coating being professionally applied by hand",
-  },
-  interiorProtection: {
-    src: "/images/interior-protection.jpg",
-    alt: "Protected vehicle interior after detailing",
   },
   finalCta: {
     src: "/images/final-cta.jpg",
