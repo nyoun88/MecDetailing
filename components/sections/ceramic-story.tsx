@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
 import { images } from "@/data/images";
 import { EASE, viewport } from "@/lib/motion";
 
@@ -21,7 +21,15 @@ export function CeramicStory() {
     <section className="bg-bg py-24 md:py-0">
       <Container className="grid gap-14 md:grid-cols-2 md:items-start md:gap-20">
         <div className="md:sticky md:top-28 md:h-[75vh]">
-          <ImagePlaceholder image={images.waterBeading} className="h-[60vh] w-full md:h-full" />
+          <div className="relative h-[60vh] w-full overflow-hidden rounded-[3px] border border-border md:h-full">
+            <Image
+              src={images.waterBeading.src}
+              alt={images.waterBeading.alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
 
         <div className="md:py-32">
