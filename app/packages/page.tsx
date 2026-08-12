@@ -26,6 +26,7 @@ export default function PackagesPage() {
         heading="Ceramic Coating Packages"
         body="Professional Gtechniq ceramic protection, installed with precision and tailored to your vehicle."
         image={images.packagesHero}
+        imagePosition="66% 58%"
       />
 
       <section className="bg-bg py-24 md:py-32">

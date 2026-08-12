@@ -39,7 +39,8 @@ export const images = {
   },
   packagesHero: {
     src: "/images/packages-hero.jpg",
-    alt: "Vehicle prepared for ceramic coating application",
+    alt: "Toyota HiLux fitted with a bull bar, parked in a driveway",
+    ready: true,
   },
   experience: {
     src: "/images/why-mec-experience.jpg",
