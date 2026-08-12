@@ -14,7 +14,13 @@ import { track } from "@/lib/analytics";
  * inclusion list revealed on hover (desktop) — always visible on touch,
  * since there's no hover to reveal it there.
  */
-export function PackageCard({ pkg }: { pkg: CeramicPackage }) {
+export function PackageCard({
+  pkg,
+  showPrice = true,
+}: {
+  pkg: CeramicPackage;
+  showPrice?: boolean;
+}) {
   return (
     <div
       id={pkg.id}
@@ -60,7 +66,9 @@ export function PackageCard({ pkg }: { pkg: CeramicPackage }) {
         </h3>
 
         <div className="mt-6 flex items-baseline gap-4">
-          <p className="text-2xl font-bold text-ink">From {formatCurrency(pkg.priceFrom)}</p>
+          {showPrice && (
+            <p className="text-2xl font-bold text-ink">From {formatCurrency(pkg.priceFrom)}</p>
+          )}
           <p className="text-xs font-semibold uppercase tracking-[0.1em] text-ink-muted">
             {pkg.product}
           </p>

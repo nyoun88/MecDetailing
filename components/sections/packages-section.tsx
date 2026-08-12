@@ -19,7 +19,7 @@ export function PackagesSection() {
         <div className="mt-16 grid items-start gap-6 md:grid-cols-2">
           {packages.map((pkg, i) => (
             <Reveal key={pkg.id} delay={i * 0.1} className={pkg.featured ? "md:pt-0" : "md:pt-20"}>
-              <PackageCard pkg={pkg} />
+              <PackageCard pkg={pkg} showPrice={false} />
             </Reveal>
           ))}
         </div>
