@@ -4,7 +4,6 @@ import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/sections/packages-hero";
 import { PackageCard } from "@/components/sections/package-card";
-import { VariantPricing } from "@/components/sections/variant-pricing";
 import { Upgrades } from "@/components/sections/upgrades";
 import { WhyGtechniq } from "@/components/sections/why-gtechniq";
 import { ComparisonTable } from "@/components/sections/comparison-table";
@@ -41,7 +40,6 @@ export default function PackagesPage() {
         </Container>
       </section>
 
-      <VariantPricing />
       <Upgrades />
       <WhyGtechniq />
       <ComparisonTable />

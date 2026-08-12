@@ -1,10 +1,3 @@
-export interface PackageVariant {
-  id: string;
-  size: "30ml" | "50ml";
-  withExoV5: boolean;
-  price: number;
-}
-
 export interface CeramicPackage {
   id: string;
   index: string;
@@ -12,7 +5,7 @@ export interface CeramicPackage {
   badge: string;
   name: string;
   nameLines: [string, string];
-  /** Lowest-priced variant — the headline "From $X" figure. */
+  /** Headline "From $X" figure. */
   priceFrom: number;
   product: string;
   warranty: string;
@@ -21,7 +14,6 @@ export interface CeramicPackage {
   recommendedFor: string;
   description: string;
   image: "essentialProtection" | "ultimateProtection";
-  variants: PackageVariant[];
 }
 
 const baseInclusions = (warranty: string) => [
@@ -48,12 +40,6 @@ export const packages: CeramicPackage[] = [
     inclusions: baseInclusions("5-Year Gtechniq Warranty"),
     recommendedFor: "Daily drivers and owners after dependable, long-term protection.",
     image: "essentialProtection",
-    variants: [
-      { id: "essential-30ml", size: "30ml", withExoV5: false, price: 1199 },
-      { id: "essential-30ml-exo", size: "30ml", withExoV5: true, price: 1499 },
-      { id: "essential-50ml", size: "50ml", withExoV5: false, price: 1399 },
-      { id: "essential-50ml-exo", size: "50ml", withExoV5: true, price: 1799 },
-    ],
   },
   {
     id: "ultimate-protection",
@@ -71,12 +57,6 @@ export const packages: CeramicPackage[] = [
     inclusions: baseInclusions("Up to 9-Year Gtechniq Warranty"),
     recommendedFor: "Owners who want the highest level of protection MEC installs.",
     image: "ultimateProtection",
-    variants: [
-      { id: "ultimate-30ml", size: "30ml", withExoV5: false, price: 1499 },
-      { id: "ultimate-30ml-exo", size: "30ml", withExoV5: true, price: 1899 },
-      { id: "ultimate-50ml", size: "50ml", withExoV5: false, price: 1799 },
-      { id: "ultimate-50ml-exo", size: "50ml", withExoV5: true, price: 2199 },
-    ],
   },
 ];
 
@@ -98,7 +78,7 @@ export const optionalUpgrades: OptionalUpgrade[] = [
     id: "exo-v5",
     name: "ExoV5 Topcoat",
     description:
-      "An additional topcoat layer applied over a ceramic system for extra gloss and slickness. See the pricing table for exact combo pricing.",
+      "An additional topcoat layer applied over a ceramic system for extra gloss and slickness.",
     priceLabel: "+$300–$400",
   },
   {

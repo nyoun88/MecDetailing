@@ -36,13 +36,6 @@ export const faqs: Faq[] = [
       "Both are professional Gtechniq ceramic coating systems installed by accredited applicators. Crystal Serum Light is featured in our Essential Protection package with a 5-year Gtechniq warranty, while Crystal Serum Ultra is featured in our Ultimate Protection package with a warranty of up to 9 years. Your installer can talk through which suits your vehicle and budget.",
   },
   {
-    id: "30ml-vs-50ml",
-    category: "Ceramic Coating",
-    question: "What's the difference between the 30ml and 50ml options?",
-    answer:
-      "Both sizes use the same Gtechniq product and carry the same warranty term — 50ml simply covers a larger vehicle or allows for a thicker application. Your installer can confirm which size suits your vehicle.",
-  },
-  {
     id: "coat-new-vehicle",
     category: "Ceramic Coating",
     question: "Can you coat a brand-new vehicle?",
