@@ -1,11 +1,11 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { ArrowLink } from "@/components/ui/arrow-link";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
 import { images } from "@/data/images";
 import { business } from "@/data/business";
 import { track } from "@/lib/analytics";
@@ -22,10 +22,14 @@ export function Hero() {
   return (
     <section ref={ref} className="relative flex h-[100svh] min-h-[640px] flex-col overflow-hidden bg-bg">
       <motion.div className="absolute inset-0" style={{ scale: imageScale }}>
-        <ImagePlaceholder
-          image={images.heroVehicle}
-          className="h-full w-full rounded-none border-0"
-          label="Hero image placeholder"
+        <Image
+          src={images.heroVehicle.src}
+          alt={images.heroVehicle.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          style={{ objectPosition: "60% 55%" }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/55 to-bg/25" />
         <div className="absolute inset-0 bg-gradient-to-r from-bg/70 via-transparent to-bg/20" />
