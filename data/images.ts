@@ -45,7 +45,8 @@ export const images = {
   },
   experience: {
     src: "/images/why-mec-experience.jpg",
-    alt: "MEC Detailing specialist working on a vehicle panel",
+    alt: "Hyundai Tucson covered in snow foam during a wash",
+    ready: true,
   },
   accreditation: {
     src: "/images/why-mec-accreditation.jpg",

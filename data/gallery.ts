@@ -27,11 +27,13 @@ export const galleryItems: GalleryItem[] = [
   { id: "g2", category: "Paint Correction", image: "/images/gallery/correction-01.jpg", alt: "Paint correction in progress" },
   { id: "g3", category: "Detailing", image: "/images/gallery/detailing-01.jpg", alt: "Chevrolet Silverado grille detail", ready: true },
   { id: "g4", category: "Wheels", image: "/images/gallery/wheels-01.jpg", alt: "Kia alloy wheel finished with ceramic coating", ready: true },
-  { id: "g5", category: "Interior", image: "/images/gallery/interior-01.jpg", alt: "Interior protection detailing", span: "wide" },
+  { id: "g5", category: "Interior", image: "/images/gallery/interior-01.jpg", alt: "Tesla Model Y interior detail", span: "wide", ready: true },
   { id: "g6", category: "Ceramic", image: "/images/gallery/ceramic-02.jpg", alt: "Ford Ranger front fender and wheel ceramic coating detail", ready: true },
   { id: "g7", category: "Paint Correction", image: "/images/gallery/correction-02.jpg", alt: "Swirl mark removal" },
   { id: "g8", category: "Detailing", image: "/images/gallery/detailing-02.jpg", alt: "Nissan Patrol front fender and wheel detail", span: "tall", ready: true },
   { id: "g9", category: "Wheels", image: "/images/gallery/wheels-02.jpg", alt: "BMW wheel and fender ceramic coating detail", ready: true },
+  { id: "g10", category: "Ceramic", image: "/images/gallery/ceramic-03.jpg", alt: "Gloss reflection on a freshly coated rear quarter panel", ready: true },
+  { id: "g11", category: "Detailing", image: "/images/gallery/detailing-03.jpg", alt: "Lamborghini Huracan covered in snow foam during a wash", ready: true },
 ];
 
 export const galleryCategories: GalleryCategory[] = [
