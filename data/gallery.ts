@@ -34,6 +34,11 @@ export const galleryItems: GalleryItem[] = [
   { id: "g9", category: "Wheels", image: "/images/gallery/wheels-02.jpg", alt: "BMW wheel and fender ceramic coating detail", ready: true },
   { id: "g10", category: "Ceramic", image: "/images/gallery/ceramic-03.jpg", alt: "Gloss reflection on a freshly coated rear quarter panel", ready: true },
   { id: "g11", category: "Detailing", image: "/images/gallery/detailing-03.jpg", alt: "Lamborghini Huracan covered in snow foam during a wash", ready: true },
+  { id: "g12", category: "Ceramic", image: "/images/gallery/ceramic-04.jpg", alt: "Tesla Model 3 rear quarter panel gloss reflection after ceramic coating", ready: true },
+  { id: "g13", category: "Detailing", image: "/images/gallery/detailing-04.jpg", alt: "Classic Ford Falcon GT sedan detailed in the MEC workshop", span: "tall", ready: true },
+  { id: "g14", category: "Ceramic", image: "/images/gallery/ceramic-05.jpg", alt: "Rolls-Royce Spirit of Ecstasy and grille after ceramic coating", span: "tall", ready: true },
+  { id: "g15", category: "Detailing", image: "/images/gallery/detailing-05.jpg", alt: "Ford FPV Falcon front three-quarter after detailing", span: "wide", ready: true },
+  { id: "g16", category: "Interior", image: "/images/gallery/interior-02.jpg", alt: "Rolls-Royce rear leather seat detail", span: "tall", ready: true },
 ];
 
 export const galleryCategories: GalleryCategory[] = [
