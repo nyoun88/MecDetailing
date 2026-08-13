@@ -37,7 +37,21 @@ export const metadata: Metadata = {
     title: `Ceramic Coating Brisbane | ${business.name}`,
     description:
       "Premium Gtechniq ceramic coating in Brisbane, professionally installed by accredited specialists.",
-    images: ["/brand/icon-512.png"],
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${business.name} — Premium Ceramic Coating & Paint Protection, Brisbane`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Ceramic Coating Brisbane | ${business.name}`,
+    description:
+      "Premium Gtechniq ceramic coating in Brisbane, professionally installed by accredited specialists.",
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
