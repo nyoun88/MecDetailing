@@ -33,7 +33,6 @@ export interface ComparisonMetric {
 
 export const comparisonMetrics: ComparisonMetric[] = [
   { feature: "Durability", scores: [3, 4, 4, 5, 5] },
-  { feature: "Ease of Application", scores: [4, 3, 2, 1, 1] },
   { feature: "Slickness", scores: [4, 4, 5, 4, 5] },
   { feature: "Gloss", scores: [4, 4, 4, 4, 5] },
   { feature: "Wash Swirl Resistance", scores: [3, 4, 4, 5, 5] },
