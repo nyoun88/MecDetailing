@@ -30,6 +30,10 @@ export const business = {
     email: "angelo@mecdetailingaust.com.au",
     emailHref: "mailto:angelo@mecdetailingaust.com.au",
   },
+  // No Instagram/Facebook/TikTok accounts exist yet, so the footer icon
+  // row is removed rather than linking "#" to nowhere (see
+  // components/layout/footer.tsx). Fill in real URLs here and re-add the
+  // <SocialLink> row + icons once accounts exist.
   social: {
     instagram: "#",
     facebook: "#",

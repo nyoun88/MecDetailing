@@ -34,14 +34,6 @@ export default function Footer() {
                 {business.contact.email}
               </a>
             </div>
-            <div className="mt-6 flex items-center gap-3">
-              <SocialLink href={business.social.instagram} label="Instagram">
-                IG
-              </SocialLink>
-              <SocialLink href={business.social.facebook} label="Facebook">
-                FB
-              </SocialLink>
-            </div>
           </div>
 
           <FooterColumn title="Navigation" links={footerNav} />
@@ -102,25 +94,5 @@ function FooterColumn({
         ))}
       </ul>
     </div>
-  );
-}
-
-function SocialLink({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <Link
-      href={href}
-      aria-label={label}
-      className="flex size-9 items-center justify-center rounded-full border border-border text-[10px] font-bold tracking-wide text-ink-muted transition-colors hover:border-accent hover:text-accent"
-    >
-      {children}
-    </Link>
   );
 }
