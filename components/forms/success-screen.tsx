@@ -52,8 +52,20 @@ export function SuccessScreen({ data }: { data: QuoteFormData }) {
         transition={{ duration: 0.5, ease: EASE, delay: 0.22 }}
         className="mt-5 text-base leading-relaxed text-ink-muted"
       >
-        Thanks, {data.firstName || "there"}. We&rsquo;ve received your
-        vehicle details and will review your enquiry.
+        Thank you for your enquiry, we know your time is valuable. A team
+        member will be in contact with you in the next 24hrs or if you need
+        to speak to someone directly please call Angelo on{" "}
+        {business.contact.phoneHref ? (
+          <a
+            href={business.contact.phoneHref}
+            className="text-ink underline-offset-4 hover:underline"
+          >
+            {business.contact.phone}
+          </a>
+        ) : (
+          business.contact.phone
+        )}
+        .
       </motion.p>
 
       <motion.div
@@ -79,19 +91,6 @@ export function SuccessScreen({ data }: { data: QuoteFormData }) {
         <Button href="/" size="lg">
           Back To MEC Detailing
         </Button>
-        <p className="text-sm text-ink-muted">
-          Need to speak with us?{" "}
-          {business.contact.phoneHref ? (
-            <>
-              Call{" "}
-              <a href={business.contact.phoneHref} className="text-ink underline-offset-4 hover:underline">
-                {business.contact.phone}
-              </a>
-            </>
-          ) : (
-            <span className="italic text-ink-muted/70">Phone number to be added</span>
-          )}
-        </p>
       </motion.div>
     </div>
   );
