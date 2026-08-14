@@ -63,18 +63,9 @@ export async function POST(request: Request) {
 
       if (error) {
         console.error("Resend rejected the quote enquiry email:", error);
-        // TEMP DEBUG — remove this return once quote emails are confirmed
-        // delivering; see note in quote-funnel.tsx.
-        return NextResponse.json({ ok: true, debugError: error });
       }
     } catch (error) {
       console.error("Failed to send quote enquiry email:", error);
-      // TEMP DEBUG — remove this return once quote emails are confirmed
-      // delivering; see note in quote-funnel.tsx.
-      return NextResponse.json({
-        ok: true,
-        debugError: error instanceof Error ? error.message : String(error),
-      });
     }
   } else {
     console.warn(

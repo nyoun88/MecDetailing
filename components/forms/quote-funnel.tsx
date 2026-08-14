@@ -69,19 +69,11 @@ export function QuoteFunnel() {
   async function submit() {
     setSubmitting(true);
     try {
-      const res = await fetch("/api/quote", {
+      await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      // TEMP DEBUG — surfaces the Resend rejection reason directly in the
-      // browser so it doesn't need to be dug out of Vercel logs. Remove
-      // this block (and the matching debugError in app/api/quote/route.ts)
-      // once quote emails are confirmed delivering.
-      const json: { debugError?: unknown } | null = await res.json().catch(() => null);
-      if (json?.debugError) {
-        alert("Quote email debug error:\n" + JSON.stringify(json.debugError, null, 2));
-      }
     } catch {
       // Non-fatal: the enquiry is still captured client-side and the team
       // can be reached directly via the summary screen's contact details.
