@@ -6,6 +6,45 @@ import { ArrowLink } from "@/components/ui/arrow-link";
 import { PageHero } from "@/components/sections/packages-hero";
 import { DetailingServices } from "@/components/sections/detailing-services";
 import { images } from "@/data/images";
+import { business } from "@/data/business";
+import { detailingServices } from "@/data/detailing";
+
+// Service + Offer structured data — one entry per service, using the same
+// `detailingServices` array DetailingServices renders below so pricing
+// shown to Google always matches what's on the page. Hourly-rate services
+// (priceUnit set) use a UnitPriceSpecification instead of a flat price.
+const detailingSchema = detailingServices.map((service) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Vehicle Detailing",
+  name: service.name,
+  description: service.description,
+  provider: {
+    "@type": "AutoDetailing",
+    name: business.name,
+    url: business.siteUrl,
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Brisbane",
+  },
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "AUD",
+    availability: "https://schema.org/InStock",
+    url: `${business.siteUrl}/detailing`,
+    ...(service.priceUnit
+      ? {
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: service.priceFrom,
+            priceCurrency: "AUD",
+            unitText: service.priceUnit,
+          },
+        }
+      : { price: service.priceFrom }),
+  },
+}));
 
 export const metadata: Metadata = {
   title: "Detailing Services",
@@ -17,6 +56,10 @@ export const metadata: Metadata = {
 export default function DetailingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(detailingSchema) }}
+      />
       <PageHero
         eyebrow="Vehicle Detailing"
         heading="Detailing Services"

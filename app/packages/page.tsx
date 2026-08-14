@@ -10,6 +10,7 @@ import { ProductComparison } from "@/components/sections/product-comparison";
 import { ComparisonTable } from "@/components/sections/comparison-table";
 import { packages } from "@/data/packages";
 import { images } from "@/data/images";
+import { business } from "@/data/business";
 
 export const metadata: Metadata = {
   title: "Ceramic Coating Packages",
@@ -18,9 +19,41 @@ export const metadata: Metadata = {
   alternates: { canonical: "/packages" },
 };
 
+// Service + Offer structured data — one entry per package, using the same
+// `packages` array PackageCard renders below so pricing shown to Google
+// always matches what's on the page. Lets eligible queries surface price
+// info directly in search results.
+const packagesSchema = packages.map((pkg) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Ceramic Coating",
+  name: pkg.name,
+  description: pkg.description,
+  provider: {
+    "@type": "AutoDetailing",
+    name: business.name,
+    url: business.siteUrl,
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Brisbane",
+  },
+  offers: {
+    "@type": "Offer",
+    price: pkg.priceFrom,
+    priceCurrency: "AUD",
+    availability: "https://schema.org/InStock",
+    url: `${business.siteUrl}/packages`,
+  },
+}));
+
 export default function PackagesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(packagesSchema) }}
+      />
       <PageHero
         eyebrow="Ceramic Protection"
         heading="Ceramic Coating Packages"
