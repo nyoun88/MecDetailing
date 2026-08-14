@@ -48,7 +48,11 @@ export async function POST(request: Request) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       const { subject, text, html } = buildQuoteEmail(data);
 
-      await resend.emails.send({
+      // resend.emails.send() does NOT throw on API-level rejections (bad
+      // "from" address, permission issues, etc.) — it resolves with
+      // { error } instead, so that has to be checked explicitly or a
+      // rejected send silently looks like a success.
+      const { error } = await resend.emails.send({
         from: process.env.QUOTE_FROM_EMAIL ?? "MEC Detailing Website <onboarding@resend.dev>",
         to: business.contact.email,
         replyTo: data.email,
@@ -56,8 +60,21 @@ export async function POST(request: Request) {
         text,
         html,
       });
+
+      if (error) {
+        console.error("Resend rejected the quote enquiry email:", error);
+        // TEMP DEBUG — remove this return once quote emails are confirmed
+        // delivering; see note in quote-funnel.tsx.
+        return NextResponse.json({ ok: true, debugError: error });
+      }
     } catch (error) {
       console.error("Failed to send quote enquiry email:", error);
+      // TEMP DEBUG — remove this return once quote emails are confirmed
+      // delivering; see note in quote-funnel.tsx.
+      return NextResponse.json({
+        ok: true,
+        debugError: error instanceof Error ? error.message : String(error),
+      });
     }
   } else {
     console.warn(
