@@ -12,8 +12,14 @@ export const paintIssues: PaintIssue[] = [
 ];
 
 export const beforeAfterExample = {
-  before: "/images/correction-before.jpg",
-  after: "/images/correction-after.jpg",
-  beforeAlt: "Vehicle panel before paint correction, showing swirl marks and haze",
-  afterAlt: "Same vehicle panel after paint correction, showing corrected gloss finish",
+  before: {
+    src: "/images/correction-before.jpg",
+    alt: "Vehicle panel before paint correction, showing swirl marks and haze",
+    ready: true,
+  },
+  after: {
+    src: "/images/correction-after.jpg",
+    alt: "Same vehicle panel after paint correction, showing corrected gloss finish",
+    ready: true,
+  },
 };

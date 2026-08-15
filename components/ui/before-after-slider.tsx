@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { MoveHorizontal } from "lucide-react";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
+import { Photo } from "@/components/ui/photo";
 import type { ImageSlot } from "@/data/images";
 
 export function BeforeAfterSlider({
@@ -20,14 +20,14 @@ export function BeforeAfterSlider({
     <div className={className}>
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[3px] border border-border select-none md:aspect-[16/10]">
         <div className="absolute inset-0">
-          <ImagePlaceholder image={after} className="h-full w-full rounded-none border-0" label="After — placeholder" />
+          <Photo image={after} className="h-full w-full rounded-none border-0" label="After — placeholder" />
         </div>
 
         <div
           className="absolute inset-0 overflow-hidden"
           style={{ clipPath: `inset(0 ${100 - value}% 0 0)` }}
         >
-          <ImagePlaceholder image={before} className="h-full w-full rounded-none border-0" label="Before — placeholder" />
+          <Photo image={before} className="h-full w-full rounded-none border-0" label="Before — placeholder" />
         </div>
 
         <div

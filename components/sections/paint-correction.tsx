@@ -20,8 +20,8 @@ export function PaintCorrection() {
 
         <Reveal delay={0.15} className="mt-14">
           <BeforeAfterSlider
-            before={{ src: beforeAfterExample.before, alt: beforeAfterExample.beforeAlt }}
-            after={{ src: beforeAfterExample.after, alt: beforeAfterExample.afterAlt }}
+            before={beforeAfterExample.before}
+            after={beforeAfterExample.after}
             className="mx-auto max-w-5xl"
           />
         </Reveal>
