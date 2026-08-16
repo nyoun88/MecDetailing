@@ -6,7 +6,7 @@ import { newCarFaqs } from "@/data/new-car-protection";
 
 export function NewCarFaq() {
   return (
-    <section className="bg-bg-secondary py-24 md:py-32">
+    <section className="bg-bg py-24 md:py-32">
       <Container className="max-w-3xl">
         <SectionHeading heading="New Car Protection — Questions?" />
 

@@ -11,7 +11,11 @@ import { track } from "@/lib/analytics";
 /**
  * Package card for /new-car-protection. Same visual language as the
  * ceramic-only PackageCard — background photo, gradient, "From $X"
- * headline price, hover-reveal inclusions.
+ * headline price. The always-visible spec grid (paint protection ->
+ * additional protection -> preparation -> protection period) lets the
+ * card scan in one glance; the full line-item inclusions list is still
+ * there underneath (hover-reveal on desktop, always visible on touch),
+ * unchanged and unabridged.
  */
 export function NewCarPackageCard({ pkg }: { pkg: NewCarPackage }) {
   return (
@@ -58,13 +62,16 @@ export function NewCarPackageCard({ pkg }: { pkg: NewCarPackage }) {
           {pkg.nameLines[1]}
         </h3>
 
-        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.06em] text-ink-muted">
-          {pkg.tagline}
-        </p>
-
         <p className="mt-4 text-sm text-ink-muted">{pkg.positioning}</p>
 
         <p className="mt-6 text-2xl font-bold text-ink">From {formatCurrency(pkg.priceFrom)}</p>
+
+        <dl className="mt-5 space-y-2.5 border-y border-border py-5">
+          <SpecRow label="Paint Protection" value={pkg.paintProtection} />
+          <SpecRow label="Additional Protection" value={pkg.additionalProtection} />
+          <SpecRow label="Preparation" value={pkg.preparation} />
+          <SpecRow label="Protection Period" value={pkg.protectionPeriod} />
+        </dl>
 
         <ul className="mt-6 max-h-0 space-y-2 overflow-hidden opacity-0 transition-all duration-500 ease-out md:group-hover:mt-6 md:group-hover:max-h-80 md:group-hover:opacity-100 max-md:mt-6 max-md:max-h-80 max-md:opacity-100">
           {pkg.inclusions.map((item) => (
@@ -81,6 +88,17 @@ export function NewCarPackageCard({ pkg }: { pkg: NewCarPackage }) {
           </ArrowLink>
         </div>
       </div>
+    </div>
+  );
+}
+
+function SpecRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-baseline justify-between gap-4">
+      <dt className="text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-muted">
+        {label}
+      </dt>
+      <dd className="text-right text-sm font-medium text-ink">{value}</dd>
     </div>
   );
 }

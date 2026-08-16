@@ -23,7 +23,7 @@ export function NewCarComparisonTable() {
                   Platinum
                 </th>
                 <th className="bg-accent/10 px-6 py-4 font-semibold uppercase tracking-[0.08em] text-accent">
-                  Ultimate
+                  Ultimate Shield
                 </th>
               </tr>
             </thead>

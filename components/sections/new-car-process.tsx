@@ -7,7 +7,7 @@ import { EASE, viewport } from "@/lib/motion";
 
 export function NewCarProcess() {
   return (
-    <section className="bg-bg py-24 md:py-32">
+    <section className="bg-bg-secondary py-24 md:py-32">
       <Container className="grid gap-14 md:grid-cols-[1fr_1.4fr] md:gap-20">
         <div className="md:sticky md:top-28 md:self-start">
           <h2 className="text-balance text-[clamp(2.1rem,5vw,3.75rem)] font-bold uppercase leading-[0.98] tracking-tight text-ink">

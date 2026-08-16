@@ -9,6 +9,7 @@ import { NewCarValueProps } from "@/components/sections/new-car-value-props";
 import { NewCarPackages } from "@/components/sections/new-car-packages";
 import { NewCarComparisonTable } from "@/components/sections/new-car-comparison-table";
 import { NewCarBundleValue } from "@/components/sections/new-car-bundle-value";
+import { NewCarWhyMec } from "@/components/sections/new-car-why-mec";
 import { NewCarProcess } from "@/components/sections/new-car-process";
 import { NewCarFaq } from "@/components/sections/new-car-faq";
 import { newCarPackages, newCarFaqs } from "@/data/new-car-protection";
@@ -29,7 +30,7 @@ const packagesSchema = newCarPackages.map((pkg) => ({
   "@context": "https://schema.org",
   "@type": "Service",
   serviceType: "New Car Protection Bundle",
-  name: pkg.name,
+  name: pkg.nameLines.join(" "),
   description: `${pkg.tagline} — ${pkg.positioning}`,
   provider: {
     "@type": "AutoDetailing",
@@ -88,8 +89,9 @@ export default function NewCarProtectionPage() {
 
       <NewCarValueProps />
       <NewCarPackages />
-      <NewCarComparisonTable />
       <NewCarBundleValue />
+      <NewCarWhyMec />
+      <NewCarComparisonTable />
       <NewCarProcess />
       <NewCarFaq />
 
@@ -115,8 +117,9 @@ export default function NewCarProtectionPage() {
               <span className="text-ink-muted">Protected From Day One.</span>
             </h2>
             <p className="mt-8 max-w-md text-balance text-base leading-relaxed text-ink-muted md:text-lg">
-              Choose your protection package and give your vehicle the level
-              of protection it deserves.
+              Choose the level of protection that&rsquo;s right for your
+              vehicle and let MEC handle the preparation, application and
+              finish.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Button href="/quote" size="lg" showArrow>

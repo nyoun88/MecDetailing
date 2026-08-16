@@ -15,8 +15,8 @@ export function NewCarValueProps() {
       <Container>
         <SectionHeading
           eyebrow="Why Protect A New Car"
-          heading="Your New Car Deserves More Than Just A New-Car Shine."
-          body="Even a brand-new vehicle is exposed to the elements from the moment it leaves the dealership. Our new-car packages protect multiple surfaces from day one, rather than focusing on paint alone."
+          heading="One Vehicle. Four Surfaces. Complete Protection."
+          body="Even a brand-new vehicle is exposed to the elements from the moment it leaves the dealership. Every package covers four surfaces from day one, rather than paint alone."
         />
 
         <Reveal delay={0.1} className="mt-10 flex flex-wrap gap-2.5">
