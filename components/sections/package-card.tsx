@@ -1,7 +1,7 @@
 "use client";
 
 import { Check } from "lucide-react";
-import { ArrowLink } from "@/components/ui/arrow-link";
+import { Button } from "@/components/ui/button";
 import { Photo } from "@/components/ui/photo";
 import { images } from "@/data/images";
 import { cn, formatCurrency } from "@/lib/utils";
@@ -9,8 +9,10 @@ import type { CeramicPackage } from "@/data/packages";
 import { track } from "@/lib/analytics";
 
 /**
+ * Product card for the two standalone ceramic coatings. Also reused (with
+ * showPrice=false) by the homepage teaser — see packages-section.tsx.
  * Presented as a vehicle specification, not a pricing card: index label,
- * oversized name, price and product as "spec sheet" data, with the full
+ * oversized name, price and subtitle as "spec sheet" data, with the full
  * inclusion list revealed on hover (desktop) — always visible on touch,
  * since there's no hover to reveal it there.
  */
@@ -43,11 +45,11 @@ export function PackageCard({
       <div className="relative z-10 flex flex-1 flex-col justify-end p-8 md:p-10">
         <div className="flex items-center justify-between">
           <span className="font-mono text-xs text-accent">
-            {pkg.index} / {pkg.label.toUpperCase()}
+            {pkg.index} / {pkg.nameLines[1].toUpperCase()}
           </span>
-          {pkg.featured && (
+          {pkg.badge && (
             <span className="rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-accent">
-              Most Popular
+              {pkg.badge}
             </span>
           )}
         </div>
@@ -65,14 +67,13 @@ export function PackageCard({
           {pkg.nameLines[1]}
         </h3>
 
-        <div className="mt-6 flex items-baseline gap-4">
-          {showPrice && (
-            <p className="text-2xl font-bold text-ink">From {formatCurrency(pkg.priceFrom)}</p>
-          )}
-          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-ink-muted">
-            {pkg.product}
-          </p>
-        </div>
+        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.1em] text-ink-muted">
+          {pkg.subtitle}
+        </p>
+
+        {showPrice && (
+          <p className="mt-5 text-2xl font-bold text-ink">From {formatCurrency(pkg.priceFrom)}</p>
+        )}
 
         <ul className="mt-6 max-h-0 space-y-2 overflow-hidden opacity-0 transition-all duration-500 ease-out md:group-hover:mt-6 md:group-hover:max-h-60 md:group-hover:opacity-100 max-md:mt-6 max-md:max-h-60 max-md:opacity-100">
           {pkg.inclusions.map((item) => (
@@ -83,13 +84,15 @@ export function PackageCard({
           ))}
         </ul>
 
-        <div className="mt-8 flex items-center justify-between border-t border-border pt-6">
-          <ArrowLink
-            href={`/packages#${pkg.id}`}
+        <div className="mt-8 border-t border-border pt-6">
+          <Button
+            href="/quote"
+            variant={pkg.featured ? "primary" : "outline"}
+            showArrow
             onClick={() => track.packageViewed(pkg.id)}
           >
-            Explore Package
-          </ArrowLink>
+            Get A Quote
+          </Button>
         </div>
       </div>
     </div>

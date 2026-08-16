@@ -33,7 +33,7 @@ export const faqs: Faq[] = [
     question:
       "What is the difference between Crystal Serum Light and Crystal Serum Ultra?",
     answer:
-      "Both are professional Gtechniq ceramic coating systems installed by accredited applicators. Crystal Serum Light is featured in our Essential Protection package with a 5-year Gtechniq warranty, while Crystal Serum Ultra is featured in our Ultimate Protection package with a warranty of up to 9 years. Your installer can talk through which suits your vehicle and budget.",
+      "Both are professional Gtechniq ceramic coatings installed by accredited applicators. Crystal Serum Light carries a 5-year Gtechniq warranty, while Crystal Serum Ultra carries a warranty of up to 9 years, with exceptional gloss and advanced hydrophobic performance. Your installer can talk through which suits your vehicle and budget.",
   },
   {
     id: "coat-new-vehicle",
@@ -47,14 +47,14 @@ export const faqs: Faq[] = [
     category: "Ceramic Coating",
     question: "Do you offer wheel and glass coating?",
     answer:
-      "Yes. Wheel Kit is available as an optional add-on to either package for $400, applying a dedicated ceramic coating to your wheel faces. Glass coating is also available — ask us for pricing as part of your quote.",
+      "Yes. Wheel Protection ($400) and G1 ClearVision Smart Glass ($399) are both available as optional extras alongside either ceramic coating.",
   },
   {
     id: "paint-correction-included",
     category: "Paint Correction",
     question: "Is paint correction included?",
     answer:
-      "Both packages include a wash, clay decontamination and a 1-hour machine buff before coating — enough to address light imperfections in most cases. More extensive multi-stage correction can be quoted separately once your paint has been assessed.",
+      "Both coatings include a wash, clay decontamination and a 1-hour machine buff before coating — enough to address light imperfections in most cases. More extensive multi-stage correction can be quoted separately once your paint has been assessed.",
   },
   {
     id: "what-does-correction-fix",
@@ -68,7 +68,7 @@ export const faqs: Faq[] = [
     category: "Warranties",
     question: "What does the warranty cover?",
     answer:
-      "Our packages include a manufacturer-backed Gtechniq warranty — 5 years on Essential Protection and up to 9 years on Ultimate Protection. Warranty terms and conditions are confirmed at the time of installation and depend on the specific Gtechniq product applied.",
+      "Each ceramic coating includes a manufacturer-backed Gtechniq warranty — 5 years on Crystal Serum Light and up to 9 years on Crystal Serum Ultra. Warranty terms and conditions are confirmed at the time of installation and depend on the specific Gtechniq product applied.",
   },
   {
     id: "how-long-does-coating-last",

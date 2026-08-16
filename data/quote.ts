@@ -28,7 +28,7 @@ export const protectionOptions: SelectableOption[] = [
   ...packages.map((pkg) => ({
     id: pkg.id,
     label: pkg.label,
-    description: `From ${formatCurrency(pkg.priceFrom)} — ${pkg.product}, ${pkg.warranty.replace("Gtechniq Warranty", "warranty").toLowerCase()}.`,
+    description: `From ${formatCurrency(pkg.priceFrom)} — ${pkg.warranty.replace("Gtechniq Warranty", "warranty").toLowerCase()}.`,
   })),
   {
     id: "recommend-for-me",
