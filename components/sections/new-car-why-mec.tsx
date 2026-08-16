@@ -10,7 +10,7 @@ import { newCarTrustPoints } from "@/data/new-car-protection";
  */
 export function NewCarWhyMec() {
   return (
-    <section className="bg-bg-secondary py-24 md:py-32">
+    <section className="bg-bg py-24 md:py-32">
       <Container>
         <SectionHeading
           size="md"

@@ -89,9 +89,9 @@ export default function NewCarProtectionPage() {
 
       <NewCarValueProps />
       <NewCarPackages />
+      <NewCarComparisonTable />
       <NewCarBundleValue />
       <NewCarWhyMec />
-      <NewCarComparisonTable />
       <NewCarProcess />
       <NewCarFaq />
 

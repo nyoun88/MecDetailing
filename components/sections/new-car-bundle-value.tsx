@@ -13,7 +13,7 @@ import { formatCurrency } from "@/lib/utils";
  */
 export function NewCarBundleValue() {
   return (
-    <section className="bg-bg py-24 md:py-32">
+    <section className="bg-bg-secondary py-24 md:py-32">
       <Container>
         <div className="mx-auto max-w-3xl">
           <Reveal>
