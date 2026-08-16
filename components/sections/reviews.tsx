@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { reviews } from "@/data/reviews";
 
-export function Reviews() {
+export function Reviews({ heading = "What Our Customers Say" }: { heading?: string }) {
   const trackRef = useRef<HTMLDivElement>(null);
 
   function scrollBy(direction: 1 | -1) {
@@ -18,7 +18,7 @@ export function Reviews() {
     <section className="bg-bg-secondary py-24 md:py-32">
       <Container>
         <div className="flex items-end justify-between gap-6">
-          <SectionHeading size="md" heading="What Our Customers Say" />
+          <SectionHeading size="md" heading={heading} />
           {reviews.length > 0 && (
             <div className="hidden gap-3 md:flex">
               <CarouselButton direction="left" onClick={() => scrollBy(-1)} />

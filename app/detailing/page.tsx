@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { ArrowLink } from "@/components/ui/arrow-link";
 import { PageHero } from "@/components/sections/packages-hero";
-import { DetailingServices } from "@/components/sections/detailing-services";
+import { EditorialSplit } from "@/components/sections/editorial-split";
+import { DetailingTrustStrip } from "@/components/sections/detailing-trust-strip";
+import { DetailingPackages } from "@/components/sections/detailing-packages";
+import { DetailingServiceFinder } from "@/components/sections/detailing-service-finder";
+import { DetailingBeforeAfter } from "@/components/sections/detailing-before-after";
+import { DetailingWhyMec } from "@/components/sections/detailing-why-mec";
+import { DetailingVsCeramic } from "@/components/sections/detailing-vs-ceramic";
+import { Reviews } from "@/components/sections/reviews";
+import { DetailingFaq } from "@/components/sections/detailing-faq";
 import { images } from "@/data/images";
 import { business } from "@/data/business";
-import { detailingServices } from "@/data/detailing";
+import { detailingServices, detailingIntro, detailingFaqs } from "@/data/detailing";
 
 // Service + Offer structured data — one entry per service, using the same
-// `detailingServices` array DetailingServices renders below so pricing
+// `detailingServices` array DetailingPackages renders below so pricing
 // shown to Google always matches what's on the page. Hourly-rate services
 // (priceUnit set) use a UnitPriceSpecification instead of a flat price.
 const detailingSchema = detailingServices.map((service) => ({
@@ -32,7 +41,7 @@ const detailingSchema = detailingServices.map((service) => ({
     "@type": "Offer",
     priceCurrency: "AUD",
     availability: "https://schema.org/InStock",
-    url: `${business.siteUrl}/detailing`,
+    url: `${business.siteUrl}/detailing#${service.id}`,
     ...(service.priceUnit
       ? {
           priceSpecification: {
@@ -46,10 +55,26 @@ const detailingSchema = detailingServices.map((service) => ({
   },
 }));
 
+// FAQPage structured data, built from the same `detailingFaqs` array
+// DetailingFaq renders below — see app/faq/page.tsx for the same pattern
+// site-wide.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: detailingFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export const metadata: Metadata = {
-  title: "Detailing Services",
+  title: "Car Detailing Brisbane — Interior, Exterior & Paint Correction",
   description:
-    "Standalone detailing services from MEC Detailing Australia — Mini Detail, Interior Detail, Full Detail and Paint Correction, priced individually.",
+    "Professional car detailing in Brisbane. Mini, interior and full detailing plus paint correction from MEC Detailing Australia — premium products, proper preparation, from $275.",
   alternates: { canonical: "/detailing" },
 };
 
@@ -60,34 +85,74 @@ export default function DetailingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(detailingSchema) }}
       />
-      <PageHero
-        eyebrow="Vehicle Detailing"
-        heading="Detailing Services"
-        body="Wash, correction and full resets — standalone services for vehicles that need a clean without a full ceramic package."
-        image={images.detailingHero}
-        imagePosition="55% 60%"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <DetailingServices />
+      <PageHero
+        eyebrow="Vehicle Detailing"
+        heading="Professional Car Detailing in Brisbane"
+        body="Restore the look. Refresh the feel. Protect the finish. Premium interior, exterior and paint correction services for vehicles that deserve more than a basic car wash."
+        image={images.detailingFull}
+        imagePosition="55% 45%"
+        primaryCta={{ label: "Get A Free Quote", href: "/quote" }}
+        secondaryCta={{ label: "View Services", href: "#services" }}
+      />
 
-      <section className="bg-bg-secondary py-24 md:py-32">
-        <Container>
-          <Reveal className="max-w-2xl">
-            <h2 className="text-balance text-[clamp(2.25rem,5.5vw,4.25rem)] font-bold uppercase leading-[0.98] tracking-tight text-ink">
-              Ready to book
+      <DetailingTrustStrip />
+
+      <EditorialSplit section={detailingIntro} index="01" />
+
+      <DetailingPackages />
+      <DetailingServiceFinder />
+      <DetailingBeforeAfter />
+      <DetailingWhyMec />
+      <DetailingVsCeramic />
+
+      <Reviews heading="Brisbane Drivers Trust MEC" />
+
+      <DetailingFaq />
+
+      <section className="relative flex min-h-[70vh] items-center overflow-hidden bg-bg">
+        <div className="absolute inset-0">
+          <Image
+            src={images.finalCta.src}
+            alt={images.finalCta.alt}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition: "center 60%" }}
+          />
+          <div className="absolute inset-0 bg-bg/85" />
+          <div className="grain-overlay" />
+        </div>
+
+        <Container className="relative z-10 py-24">
+          <Reveal>
+            <h2 className="text-balance text-[clamp(2.5rem,7vw,5.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-ink">
+              Ready To Bring Your
               <br />
-              your vehicle in?
+              <span className="text-ink-muted">Vehicle Back To Its Best?</span>
             </h2>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-ink-muted md:text-lg">
-              Tell us about your vehicle and which service you&rsquo;re after,
-              and we&rsquo;ll confirm pricing and availability.
+            <p className="mt-8 max-w-md text-balance text-base leading-relaxed text-ink-muted md:text-lg">
+              Tell us about your vehicle and what you&rsquo;d like to
+              achieve. We&rsquo;ll recommend the right service and provide
+              you with a personalised quote.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Button href="/quote" size="lg" showArrow>
                 Get My Free Quote
               </Button>
               <ArrowLink href="/packages">View Ceramic Packages</ArrowLink>
             </div>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <div className="hairline mt-16" />
+            <p className="pt-6 text-[11px] font-semibold uppercase tracking-[0.24em] text-ink-muted">
+              No Obligation • Personalised Recommendations • Brisbane Based
+            </p>
           </Reveal>
         </Container>
       </section>
