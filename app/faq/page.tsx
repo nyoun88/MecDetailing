@@ -7,7 +7,7 @@ import { faqs } from "@/data/faqs";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Answers to common questions about ceramic coating, paint correction, warranties, maintenance and booking with MEC Detailing Australia in Brisbane.",
+    "Answers to common questions about ceramic coating, new car protection, detailing, paint correction, warranties, maintenance and booking with MEC Detailing Australia in Brisbane.",
   alternates: { canonical: "/faq" },
 };
 

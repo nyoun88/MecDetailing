@@ -1,5 +1,7 @@
 export type FaqCategory =
   | "Ceramic Coating"
+  | "New Car Protection"
+  | "Detailing"
   | "Paint Correction"
   | "Warranties"
   | "Maintenance"
@@ -48,6 +50,90 @@ export const faqs: Faq[] = [
     question: "Do you offer wheel and glass coating?",
     answer:
       "Yes. Wheel Protection ($400) and G1 ClearVision Smart Glass ($399) are both available as optional extras alongside either ceramic coating.",
+  },
+  {
+    id: "exo5-topcoat",
+    category: "Ceramic Coating",
+    question: "Can I add the EXO 5 topcoat?",
+    answer:
+      "Yes. Gtechniq EXO 5 is available as an optional extra applied over Crystal Serum Ultra, designed to enhance water repellency and surface performance.",
+  },
+  {
+    id: "ncp-what-is-new-car-protection",
+    category: "New Car Protection",
+    question: "What is New Car Protection?",
+    answer:
+      "New Car Protection is our bundled package for new vehicles — combining ceramic coating with wheel, glass and interior protection, plus professional preparation, all under one package price. It's a separate offering from our standalone ceramic coatings.",
+  },
+  {
+    id: "ncp-whats-included",
+    category: "New Car Protection",
+    question: "What's included in a New Car Protection package?",
+    answer:
+      "Every package bundles a Gtechniq ceramic coating with wheel coating, G1 ClearVision Smart Glass, interior protection, and professional preparation — wash, clay decontamination and a machine polish — all under one package price.",
+  },
+  {
+    id: "ncp-bundle-value",
+    category: "New Car Protection",
+    question: "Is New Car Protection better value than booking services individually?",
+    answer:
+      "Yes. Each package bundles a standalone ceramic coating with wheel, glass and interior protection at a lower combined price than booking each service separately — see the New Car Protection page for the exact saving on each package.",
+  },
+  {
+    id: "ncp-exo5",
+    category: "New Car Protection",
+    question: "What does Ultimate Shield's EXO 5 topcoat do?",
+    answer:
+      "EXO 5 is a hydrophobic topcoat applied over Crystal Serum Ultra, designed to enhance water repellency and surface performance — included as standard in Ultimate Shield Protection, our top New Car Protection package.",
+  },
+  {
+    id: "ncp-how-to-quote",
+    category: "New Car Protection",
+    question: "How do I get a New Car Protection quote?",
+    answer:
+      "New Car Protection has its own quote form, separate from our general quote form, so you're only asked about the Signature, Platinum and Ultimate Shield packages. Use the Get A Quote button on the New Car Protection page to get started.",
+  },
+  {
+    id: "det-how-long",
+    category: "Detailing",
+    question: "How long does a detail take?",
+    answer:
+      "Turnaround depends on your vehicle's size, condition and the service booked. We'll confirm an estimated timeframe once we've assessed your vehicle at the time of quoting.",
+  },
+  {
+    id: "det-which-package",
+    category: "Detailing",
+    question: "Which detailing package is right for my vehicle?",
+    answer:
+      "It depends on what your vehicle needs — a light refresh (Mini Detail), a cabin clean (Interior Detail), a complete reset (Full Detail), or paint correction for swirl marks and dull finish. Tell us about your vehicle when you request a quote and we'll recommend the right service.",
+  },
+  {
+    id: "det-mobile",
+    category: "Detailing",
+    question: "Do you offer mobile detailing?",
+    answer:
+      "MEC Detailing operates from our Kedron studio, where every vehicle is detailed in a controlled environment with the right tools and products on hand. Get in touch with your vehicle and location and we can confirm the best option for you.",
+  },
+  {
+    id: "det-scratches",
+    category: "Detailing",
+    question: "Can you remove scratches?",
+    answer:
+      "Paint correction addresses light, surface-level scratches that catch and scatter light. Deeper scratches may need additional correction time, or may not be fully removable — we'll assess your paint and let you know what's achievable before starting.",
+  },
+  {
+    id: "det-vs-correction",
+    category: "Detailing",
+    question: "What's the difference between detailing and paint correction?",
+    answer:
+      "Detailing cleans and restores your vehicle's interior and exterior — wash, decontamination and interior care. Paint correction is a separate, more involved process using machine polishing to reduce swirl marks, light scratches and oxidation from the clear coat itself.",
+  },
+  {
+    id: "det-add-ceramic",
+    category: "Detailing",
+    question: "Can I add ceramic coating after a detail?",
+    answer:
+      "Yes. A Full Detail or paint correction is a great foundation before ceramic coating, since properly prepared paint gets the best result from the coating. Explore our ceramic coating options and let us know if you'd like to add it to your booking.",
   },
   {
     id: "paint-correction-included",
@@ -102,6 +188,8 @@ export const faqs: Faq[] = [
 
 export const faqCategories: FaqCategory[] = [
   "Ceramic Coating",
+  "New Car Protection",
+  "Detailing",
   "Paint Correction",
   "Warranties",
   "Maintenance",
