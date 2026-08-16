@@ -81,7 +81,7 @@ export default function PackagesPage() {
 
       <PageHero
         eyebrow="Ceramic Coating"
-        heading="Professional Ceramic Coating. Engineered For Long-Term Protection."
+        heading="Ceramic Coatings"
         body="Choose your Gtechniq ceramic coating, then customise your protection with optional wheel, glass, interior and trim protection."
         image={images.packagesHero}
         imagePosition="66% 58%"
