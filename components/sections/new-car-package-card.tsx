@@ -1,6 +1,5 @@
 "use client";
 
-import { Check } from "lucide-react";
 import { ArrowLink } from "@/components/ui/arrow-link";
 import { Photo } from "@/components/ui/photo";
 import { images } from "@/data/images";
@@ -11,11 +10,11 @@ import { track } from "@/lib/analytics";
 /**
  * Package card for /new-car-protection. Same visual language as the
  * ceramic-only PackageCard — background photo, gradient, "From $X"
- * headline price. The always-visible spec grid (paint protection ->
- * additional protection -> preparation -> protection period) lets the
- * card scan in one glance; the full line-item inclusions list is still
- * there underneath (hover-reveal on desktop, always visible on touch),
- * unchanged and unabridged.
+ * headline price. The spec grid (paint protection -> additional
+ * protection -> preparation -> protection period) is the card's only
+ * inclusions summary — the full line-item checklist was dropped since
+ * it just repeated the same information and made the card feel
+ * crowded, especially on mobile where it was always expanded.
  */
 export function NewCarPackageCard({ pkg }: { pkg: NewCarPackage }) {
   return (
@@ -88,16 +87,7 @@ export function NewCarPackageCard({ pkg }: { pkg: NewCarPackage }) {
           <SpecRow label="Protection Period" value={pkg.protectionPeriod} />
         </dl>
 
-        <ul className="mt-6 max-h-0 space-y-2 overflow-hidden opacity-0 transition-all duration-500 ease-out md:group-hover:mt-6 md:group-hover:max-h-80 md:group-hover:opacity-100 max-md:mt-6 max-md:max-h-80 max-md:opacity-100">
-          {pkg.inclusions.map((item) => (
-            <li key={item} className="flex items-center gap-2.5 text-sm text-ink-muted">
-              <Check aria-hidden className="size-3.5 shrink-0 text-accent" />
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-8 flex items-center justify-between border-t border-border pt-6">
+        <div className="mt-6 flex items-center justify-between">
           <ArrowLink href="/quote" onClick={() => track.packageViewed(pkg.id)}>
             Get A Quote
           </ArrowLink>
