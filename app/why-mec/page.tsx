@@ -19,6 +19,7 @@ import { whyMecSections, whyMecFaqs } from "@/data/why-mec";
 import { images } from "@/data/images";
 
 const preparationSection = whyMecSections.find((s) => s.id === "preparation-standards")!;
+const aftercareSection = whyMecSections.find((s) => s.id === "aftercare")!;
 
 export const metadata: Metadata = {
   title: "Why MEC — Ceramic Coating Brisbane",
@@ -70,6 +71,8 @@ export default function WhyMecPage() {
 
       <WhyMecCoatingSystems />
       <WhyMecResults />
+
+      <EditorialSplit section={aftercareSection} index="09" reverse />
       <WhyMecAftercare />
       <WhyMecComparison />
       <WhyMecFaq />

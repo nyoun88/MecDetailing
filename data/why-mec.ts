@@ -255,6 +255,6 @@ export const whyMecSections: WhyMecSection[] = [
     body: [
       "Every vehicle leaves with a handover walkthrough and aftercare guidance, so you know how to maintain your coating and get the most from its warranty term.",
     ],
-    image: images.aftercare,
+    image: images.benefitProtection,
   },
 ];

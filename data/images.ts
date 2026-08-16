@@ -68,10 +68,6 @@ export const images = {
     alt: "Gtechniq Crystal Serum Ultra being applied to a vehicle",
     ready: true,
   },
-  aftercare: {
-    src: "/images/why-mec-aftercare.jpg",
-    alt: "Finished vehicle handover after ceramic coating",
-  },
   essentialProtection: {
     src: "/images/package-essential.jpg",
     alt: "Purple Holden Torana SS with the engine bay open",
