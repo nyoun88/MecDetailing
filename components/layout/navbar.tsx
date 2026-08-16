@@ -93,7 +93,7 @@ export default function Navbar() {
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-7 xl:flex">
           {primaryNav.map((link) => (
             <Link
               key={link.href}
@@ -125,7 +125,7 @@ export default function Navbar() {
           onClick={() => setMobileOpen(true)}
           aria-label="Open menu"
           aria-expanded={mobileOpen}
-          className="flex size-10 items-center justify-center text-ink md:hidden"
+          className="flex size-10 items-center justify-center text-ink xl:hidden"
         >
           <Menu aria-hidden className="size-6" />
         </button>
@@ -144,7 +144,7 @@ export default function Navbar() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25, ease: EASE }}
-          className="fixed inset-0 z-[60] bg-bg md:hidden"
+          className="fixed inset-0 z-[60] bg-bg xl:hidden"
         >
           <Container className="flex h-20 items-center justify-between">
             <Link href="/" onClick={() => setMobileOpen(false)} className="shrink-0">
