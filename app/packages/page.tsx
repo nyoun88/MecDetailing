@@ -18,7 +18,7 @@ import { business } from "@/data/business";
 export const metadata: Metadata = {
   title: "Ceramic Coating Brisbane — Crystal Serum Light & Ultra",
   description:
-    "Professional Gtechniq ceramic coating in Brisbane. Choose Crystal Serum Light (5-year) or Crystal Serum Ultra (9-year) from $1,199, then add optional wheel, glass, interior or trim protection.",
+    "Professional Gtechniq ceramic coating in Brisbane. Choose Crystal Serum Light (5-year) or Crystal Serum Ultra (9-year) from $1,199, then add optional wheel, glass, interior, trim or EXO 5 topcoat protection.",
   alternates: { canonical: "/packages" },
 };
 
@@ -82,7 +82,7 @@ export default function PackagesPage() {
       <PageHero
         eyebrow="Ceramic Coating"
         heading="Ceramic Coatings"
-        body="Choose your Gtechniq ceramic coating, then customise your protection with optional wheel, glass, interior and trim protection."
+        body="Choose your Gtechniq ceramic coating, then customise your protection with optional wheel, glass, interior, trim and EXO 5 topcoat protection."
         image={images.packagesHero}
         imagePosition="66% 58%"
         primaryCta={{ label: "Choose Your Coating", href: "#coatings" }}

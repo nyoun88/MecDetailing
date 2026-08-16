@@ -21,6 +21,10 @@ const bundledExtrasValue = protectionExtras
   .filter((extra) => BUNDLED_EXTRA_IDS.includes(extra.id))
   .reduce((sum, extra) => sum + extra.price, 0);
 
+// EXO 5's standalone price, now that it's sold as its own /packages extra —
+// only Ultimate Shield includes it, on top of the three extras above.
+const exo5Price = protectionExtras.find((extra) => extra.id === "exo-5-topcoat")!.price;
+
 export interface NewCarPackage {
   id: string;
   index: string;
@@ -48,9 +52,10 @@ export interface NewCarPackage {
    * Bundle-value figures — computed from the real standalone ceramic
    * prices (data/packages.ts) and the real extras prices
    * (data/ceramic-page.ts) rather than hardcoded, so they can't drift.
-   * combinedIndividualValue/potentialSaving are omitted whenever the
-   * package includes something with no confirmed standalone price
-   * (EXO 5, for Ultimate Shield) rather than guessing one.
+   * combinedIndividualValue/potentialSaving are only omitted if a package
+   * ever includes something with no confirmed standalone price anywhere
+   * on the site — not currently the case for any package below, now that
+   * EXO 5 has its own /packages price.
    */
   bundleValue: {
     standaloneCoatingLabel: string;
@@ -58,7 +63,6 @@ export interface NewCarPackage {
     extrasValue: number;
     combinedIndividualValue?: number;
     potentialSaving?: number;
-    includesUnpricedAddOn?: boolean;
   };
 }
 
@@ -152,11 +156,12 @@ export const newCarPackages: NewCarPackage[] = [
     bundleValue: {
       standaloneCoatingLabel: "Crystal Serum Ultra",
       standaloneCoatingPrice: crystalSerumUltraPrice,
-      extrasValue: bundledExtrasValue,
-      // No combinedIndividualValue/potentialSaving here — EXO 5 has no
-      // confirmed standalone price anywhere on the site, so a specific
-      // dollar figure would be a guess. See includesUnpricedAddOn below.
-      includesUnpricedAddOn: true,
+      // Ultimate Shield is the only package that also includes EXO 5, so
+      // its extras value is the shared wheel/glass/interior total plus
+      // EXO 5's own /packages price — not just bundledExtrasValue.
+      extrasValue: bundledExtrasValue + exo5Price,
+      combinedIndividualValue: crystalSerumUltraPrice + bundledExtrasValue + exo5Price,
+      potentialSaving: crystalSerumUltraPrice + bundledExtrasValue + exo5Price - 2549,
     },
     inclusions: [
       "Gtechniq Crystal Serum Ultra — 30ml",

@@ -68,7 +68,6 @@ export function NewCarPackageCard({ pkg }: { pkg: NewCarPackage }) {
         <p className="mt-2 text-xs text-ink-muted">
           Individual protection services included:{" "}
           <span className="text-ink">{formatCurrency(pkg.bundleValue.extrasValue)} value</span>
-          {pkg.bundleValue.includesUnpricedAddOn && " + EXO 5 topcoat"}
           {pkg.bundleValue.potentialSaving !== undefined && (
             <>
               <br />

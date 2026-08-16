@@ -63,7 +63,7 @@ export interface ProtectionExtra {
 }
 
 /**
- * The four optional protection extras. Deliberately presented as
+ * The five optional protection extras. Deliberately presented as
  * selectable add-ons alongside a coating, never as their own package
  * tier — that's what /new-car-protection is for.
  */
@@ -104,6 +104,15 @@ export const protectionExtras: ProtectionExtra[] = [
     price: 295,
     ctaLabel: "Add Trim Protection",
   },
+  {
+    id: "exo-5-topcoat",
+    name: "Gtechniq EXO 5 Topcoat",
+    shortLabel: "EXO 5 Topcoat",
+    description:
+      "A hydrophobic topcoat applied over Crystal Serum Ultra, designed to enhance water repellency and surface performance.",
+    price: 400,
+    ctaLabel: "Add EXO 5 Topcoat",
+  },
 ];
 
 export interface CeramicProcessStep {
@@ -121,7 +130,7 @@ export const ceramicProcessSteps: CeramicProcessStep[] = [
   {
     number: "02",
     title: "Select Your Extras",
-    description: "Add wheel, glass, interior or trim protection if required.",
+    description: "Add wheel, glass, interior, trim or EXO 5 topcoat protection if required.",
   },
   {
     number: "03",
@@ -181,10 +190,16 @@ export const ceramicFaqs: CeramicFaq[] = [
       "Yes. Trim Protection is available as an optional extra, applied to your exterior trim surfaces alongside your coating.",
   },
   {
+    id: "add-exo5",
+    question: "Can I add the EXO 5 topcoat?",
+    answer:
+      "Yes. Gtechniq EXO 5 is available as an optional extra applied over Crystal Serum Ultra, designed to enhance water repellency and surface performance.",
+  },
+  {
     id: "multiple-extras",
     question: "Can I choose more than one optional extra?",
     answer:
-      "Yes. You can add as many of the four optional extras as you'd like — they're independent of each other and of which coating you choose.",
+      "Yes. You can add as many of the five optional extras as you'd like — they're independent of each other and of which coating you choose.",
   },
   {
     id: "worth-it-daily-driver",

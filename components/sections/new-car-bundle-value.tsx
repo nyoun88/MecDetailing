@@ -8,10 +8,8 @@ import { formatCurrency } from "@/lib/utils";
  * after the package cards. The breakdown table's figures are read
  * straight from newCarPackages[].bundleValue — computed in
  * data/new-car-protection.ts from the real standalone ceramic prices and
- * real extras prices, never hardcoded here. Ultimate Shield's "potential
- * saving" is intentionally left as a qualitative note rather than a
- * number, since EXO 5 has no confirmed standalone price anywhere on the
- * site — see includesUnpricedAddOn.
+ * real extras prices (including EXO 5's /packages price), never
+ * hardcoded here.
  */
 export function NewCarBundleValue() {
   return (
@@ -75,7 +73,6 @@ export function NewCarBundleValue() {
                 {newCarPackages.map((pkg) => (
                   <td key={pkg.id} className="px-6 py-4 text-ink-muted">
                     {formatCurrency(pkg.bundleValue.extrasValue)}
-                    {pkg.bundleValue.includesUnpricedAddOn && " + EXO 5"}
                   </td>
                 ))}
               </tr>
@@ -115,10 +112,8 @@ export function NewCarBundleValue() {
           <p className="text-xs leading-relaxed text-ink-muted/70">
             Figures compare each package price against booking the same
             standalone ceramic coating and additional protection services
-            (wheel, glass and interior) individually at their current
-            prices. Ultimate Shield also includes the EXO 5 hydrophobic
-            topcoat, which isn&rsquo;t sold as a standalone service, so no
-            specific saving figure is shown for it.
+            (wheel, glass, interior and, for Ultimate Shield, EXO 5
+            topcoat) individually at their current prices.
           </p>
         </Reveal>
       </Container>
