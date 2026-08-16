@@ -87,7 +87,7 @@ export function PackageCard({
         <div className="mt-8 border-t border-border pt-6">
           <Button
             href="/quote"
-            variant={pkg.featured ? "primary" : "outline"}
+            variant="primary"
             showArrow
             onClick={() => track.packageViewed(pkg.id)}
           >
