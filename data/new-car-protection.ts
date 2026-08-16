@@ -10,8 +10,6 @@ import type { images } from "@/data/images";
 export interface NewCarPackage {
   id: string;
   index: string;
-  /** Medal-style rank icon shown on the card, e.g. "🥇". */
-  icon: string;
   label: string;
   name: string;
   nameLines: [string, string];
@@ -33,7 +31,6 @@ export const newCarPackages: NewCarPackage[] = [
   {
     id: "signature-protection",
     index: "01",
-    icon: "🥇",
     label: "Signature",
     name: "Signature Protection",
     nameLines: ["Signature", "Protection"],
@@ -59,7 +56,6 @@ export const newCarPackages: NewCarPackage[] = [
   {
     id: "platinum-protection",
     index: "02",
-    icon: "🏆",
     label: "Platinum",
     name: "Platinum Protection",
     nameLines: ["Platinum", "Protection"],
@@ -86,7 +82,6 @@ export const newCarPackages: NewCarPackage[] = [
   {
     id: "ultimate-protection",
     index: "03",
-    icon: "👑",
     label: "Ultimate",
     name: "Ultimate Protection",
     nameLines: ["Ultimate", "Protection"],

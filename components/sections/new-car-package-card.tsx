@@ -35,8 +35,8 @@ export function NewCarPackageCard({ pkg }: { pkg: NewCarPackage }) {
 
       <div className="relative z-10 flex flex-1 flex-col justify-end p-7 md:p-8">
         <div className="flex items-center justify-between">
-          <span className="text-2xl leading-none" aria-hidden>
-            {pkg.icon}
+          <span className="font-mono text-xs text-accent">
+            {pkg.index} / {pkg.label.toUpperCase()}
           </span>
           {pkg.badge && (
             <span className="rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-accent">
