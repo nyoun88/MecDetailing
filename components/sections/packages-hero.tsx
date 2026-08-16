@@ -1,8 +1,16 @@
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { Button } from "@/components/ui/button";
+import { ArrowLink } from "@/components/ui/arrow-link";
 import { Photo } from "@/components/ui/photo";
 import { images, type ImageSlot } from "@/data/images";
+
+interface HeroCta {
+  label: string;
+  href: string;
+  onClick?: () => void;
+}
 
 export function PageHero({
   eyebrow,
@@ -10,12 +18,18 @@ export function PageHero({
   body,
   image,
   imagePosition,
+  primaryCta,
+  secondaryCta,
 }: {
   eyebrow?: string;
   heading: string;
   body?: string;
   image?: ImageSlot;
   imagePosition?: string;
+  /** Optional primary CTA button — omit for the plain interior-page hero. */
+  primaryCta?: HeroCta;
+  /** Optional secondary link CTA, shown next to the primary button. */
+  secondaryCta?: HeroCta;
 }) {
   return (
     <section className="relative flex min-h-[56vh] items-end overflow-hidden bg-bg md:min-h-[68vh]">
@@ -41,6 +55,20 @@ export function PageHero({
             <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-ink-muted md:text-lg">
               {body}
             </p>
+          )}
+          {(primaryCta || secondaryCta) && (
+            <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
+              {primaryCta && (
+                <Button href={primaryCta.href} size="lg" showArrow onClick={primaryCta.onClick}>
+                  {primaryCta.label}
+                </Button>
+              )}
+              {secondaryCta && (
+                <ArrowLink href={secondaryCta.href} onClick={secondaryCta.onClick}>
+                  {secondaryCta.label}
+                </ArrowLink>
+              )}
+            </div>
           )}
         </Reveal>
       </Container>

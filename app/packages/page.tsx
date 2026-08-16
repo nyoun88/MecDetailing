@@ -4,6 +4,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/sections/packages-hero";
 import { PackageCard } from "@/components/sections/package-card";
+import { ArrowLink } from "@/components/ui/arrow-link";
 import { Upgrades } from "@/components/sections/upgrades";
 import { WhyGtechniq } from "@/components/sections/why-gtechniq";
 import { ProductComparison } from "@/components/sections/product-comparison";
@@ -71,6 +72,29 @@ export default function PackagesPage() {
               </Reveal>
             ))}
           </div>
+        </Container>
+      </section>
+
+      <section className="bg-bg-secondary py-16">
+        <Container>
+          <Reveal className="flex flex-col items-start justify-between gap-6 rounded-[3px] border border-border-strong p-8 md:flex-row md:items-center md:p-10">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+                Just Bought New?
+              </p>
+              <h2 className="mt-3 text-balance text-2xl font-bold uppercase leading-[1] tracking-tight text-ink md:text-3xl">
+                Protect Paint, Wheels, Glass &amp; Interior Together
+              </h2>
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink-muted">
+                Our New Car Protection packages bundle ceramic, wheel, glass
+                and interior coating for new-vehicle owners, at a better rate
+                than booking each separately.
+              </p>
+            </div>
+            <ArrowLink href="/new-car-protection" className="shrink-0">
+              View New Car Protection Packages
+            </ArrowLink>
+          </Reveal>
         </Container>
       </section>
 
