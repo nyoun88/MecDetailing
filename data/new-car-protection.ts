@@ -1,4 +1,6 @@
 import type { images } from "@/data/images";
+import { packages as ceramicCoatings } from "@/data/packages";
+import { protectionExtras } from "@/data/ceramic-page";
 
 /**
  * Data for the dedicated /new-car-protection page — a separate offering
@@ -6,6 +8,18 @@ import type { images } from "@/data/images";
  * wheel, glass and interior protection together for new-car owners.
  * Deliberately does not touch data/packages.ts or its existing pricing.
  */
+
+const crystalSerumLightPrice = ceramicCoatings.find((c) => c.id === "crystal-serum-light")!.priceFrom;
+const crystalSerumUltraPrice = ceramicCoatings.find((c) => c.id === "crystal-serum-ultra")!.priceFrom;
+
+// The three protection extras actually bundled into every new-car
+// package (matches each package's `additionalProtection` field:
+// "Wheel + Glass + Interior"). Trim Protection is a /packages-only
+// extra, not part of these bundles, so it's deliberately excluded here.
+const BUNDLED_EXTRA_IDS = ["interior-protection", "wheel-protection", "glass-protection"];
+const bundledExtrasValue = protectionExtras
+  .filter((extra) => BUNDLED_EXTRA_IDS.includes(extra.id))
+  .reduce((sum, extra) => sum + extra.price, 0);
 
 export interface NewCarPackage {
   id: string;
@@ -30,6 +44,22 @@ export interface NewCarPackage {
   featured: boolean;
   inclusions: string[];
   image: keyof typeof images;
+  /**
+   * Bundle-value figures — computed from the real standalone ceramic
+   * prices (data/packages.ts) and the real extras prices
+   * (data/ceramic-page.ts) rather than hardcoded, so they can't drift.
+   * combinedIndividualValue/potentialSaving are omitted whenever the
+   * package includes something with no confirmed standalone price
+   * (EXO 5, for Ultimate Shield) rather than guessing one.
+   */
+  bundleValue: {
+    standaloneCoatingLabel: string;
+    standaloneCoatingPrice: number;
+    extrasValue: number;
+    combinedIndividualValue?: number;
+    potentialSaving?: number;
+    includesUnpricedAddOn?: boolean;
+  };
 }
 
 export const newCarPackages: NewCarPackage[] = [
@@ -47,6 +77,13 @@ export const newCarPackages: NewCarPackage[] = [
     protectionPeriod: "5 Years",
     warrantyLabel: "5-Year Coating Protection",
     featured: false,
+    bundleValue: {
+      standaloneCoatingLabel: "Crystal Serum Light",
+      standaloneCoatingPrice: crystalSerumLightPrice,
+      extrasValue: bundledExtrasValue,
+      combinedIndividualValue: crystalSerumLightPrice + bundledExtrasValue,
+      potentialSaving: crystalSerumLightPrice + bundledExtrasValue - 1949,
+    },
     inclusions: [
       "Gtechniq Crystal Serum Light — 30ml",
       "Gtechniq Wheel Coating — All 4 Wheels",
@@ -76,6 +113,13 @@ export const newCarPackages: NewCarPackage[] = [
     warrantyLabel: "9-Year Coating Protection",
     badge: "Most Popular",
     featured: true,
+    bundleValue: {
+      standaloneCoatingLabel: "Crystal Serum Ultra",
+      standaloneCoatingPrice: crystalSerumUltraPrice,
+      extrasValue: bundledExtrasValue,
+      combinedIndividualValue: crystalSerumUltraPrice + bundledExtrasValue,
+      potentialSaving: crystalSerumUltraPrice + bundledExtrasValue - 2149,
+    },
     inclusions: [
       "Gtechniq Crystal Serum Ultra — 30ml",
       "Gtechniq Wheel Coating — All 4 Wheels",
@@ -105,6 +149,15 @@ export const newCarPackages: NewCarPackage[] = [
     warrantyLabel: "9-Year Crystal Serum Ultra Protection + EXO 5 Topcoat",
     badge: "Best Protection",
     featured: false,
+    bundleValue: {
+      standaloneCoatingLabel: "Crystal Serum Ultra",
+      standaloneCoatingPrice: crystalSerumUltraPrice,
+      extrasValue: bundledExtrasValue,
+      // No combinedIndividualValue/potentialSaving here — EXO 5 has no
+      // confirmed standalone price anywhere on the site, so a specific
+      // dollar figure would be a guess. See includesUnpricedAddOn below.
+      includesUnpricedAddOn: true,
+    },
     inclusions: [
       "Gtechniq Crystal Serum Ultra — 30ml",
       "Gtechniq EXO 5 — 30ml",

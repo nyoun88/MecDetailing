@@ -66,6 +66,21 @@ export function NewCarPackageCard({ pkg }: { pkg: NewCarPackage }) {
 
         <p className="mt-6 text-2xl font-bold text-ink">From {formatCurrency(pkg.priceFrom)}</p>
 
+        <p className="mt-2 text-xs text-ink-muted">
+          Individual protection services included:{" "}
+          <span className="text-ink">{formatCurrency(pkg.bundleValue.extrasValue)} value</span>
+          {pkg.bundleValue.includesUnpricedAddOn && " + EXO 5 topcoat"}
+          {pkg.bundleValue.potentialSaving !== undefined && (
+            <>
+              <br />
+              Potential bundle saving:{" "}
+              <span className="font-semibold text-accent">
+                From {formatCurrency(pkg.bundleValue.potentialSaving)}
+              </span>
+            </>
+          )}
+        </p>
+
         <dl className="mt-5 space-y-2.5 border-y border-border py-5">
           <SpecRow label="Paint Protection" value={pkg.paintProtection} />
           <SpecRow label="Additional Protection" value={pkg.additionalProtection} />
