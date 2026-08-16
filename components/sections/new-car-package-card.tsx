@@ -10,10 +10,8 @@ import { track } from "@/lib/analytics";
 
 /**
  * Package card for /new-car-protection. Same visual language as the
- * ceramic-only PackageCard (background photo, gradient, hover-reveal
- * inclusions) but built around two clearly-labelled prices — 30ml as the
- * headline figure, 50ml presented as an upgrade of the same package, never
- * as a separate product.
+ * ceramic-only PackageCard — background photo, gradient, "From $X"
+ * headline price, hover-reveal inclusions.
  */
 export function NewCarPackageCard({ pkg }: { pkg: NewCarPackage }) {
   return (
@@ -66,22 +64,7 @@ export function NewCarPackageCard({ pkg }: { pkg: NewCarPackage }) {
 
         <p className="mt-4 text-sm text-ink-muted">{pkg.positioning}</p>
 
-        <div className="mt-6 rounded-[3px] border border-border bg-bg/60 p-4">
-          <div className="flex items-baseline justify-between gap-3">
-            <span className="text-xs font-semibold uppercase tracking-[0.08em] text-ink-muted">
-              30ml
-            </span>
-            <span className="text-2xl font-bold text-ink">{formatCurrency(pkg.price30ml)}</span>
-          </div>
-          <div className="mt-2 flex items-baseline justify-between gap-3 border-t border-border pt-2">
-            <span className="text-xs font-semibold uppercase tracking-[0.08em] text-accent">
-              Upgrade To 50ml
-            </span>
-            <span className="text-sm font-semibold text-ink-muted">
-              {formatCurrency(pkg.price50ml)}
-            </span>
-          </div>
-        </div>
+        <p className="mt-6 text-2xl font-bold text-ink">From {formatCurrency(pkg.priceFrom)}</p>
 
         <ul className="mt-6 max-h-0 space-y-2 overflow-hidden opacity-0 transition-all duration-500 ease-out md:group-hover:mt-6 md:group-hover:max-h-80 md:group-hover:opacity-100 max-md:mt-6 max-md:max-h-80 max-md:opacity-100">
           {pkg.inclusions.map((item) => (

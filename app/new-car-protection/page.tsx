@@ -42,7 +42,7 @@ const packagesSchema = newCarPackages.map((pkg) => ({
   },
   offers: {
     "@type": "Offer",
-    price: pkg.price30ml,
+    price: pkg.priceFrom,
     priceCurrency: "AUD",
     availability: "https://schema.org/InStock",
     url: `${business.siteUrl}/new-car-protection#${pkg.id}`,

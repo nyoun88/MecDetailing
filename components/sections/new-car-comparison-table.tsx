@@ -23,7 +23,7 @@ export function NewCarComparisonTable() {
                   Platinum
                 </th>
                 <th className="bg-accent/10 px-6 py-4 font-semibold uppercase tracking-[0.08em] text-accent">
-                  Ultimate Shield
+                  Ultimate
                 </th>
               </tr>
             </thead>
@@ -34,7 +34,7 @@ export function NewCarComparisonTable() {
                   <td className="px-6 py-4 text-ink-muted">{row.signature}</td>
                   <td className="px-6 py-4 text-ink-muted">{row.platinum}</td>
                   <td className="bg-accent/[0.04] px-6 py-4 font-medium text-ink">
-                    {row.ultimateShield}
+                    {row.ultimate}
                   </td>
                 </tr>
               ))}

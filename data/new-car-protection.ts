@@ -19,10 +19,8 @@ export interface NewCarPackage {
   tagline: string;
   /** One-line positioning statement. */
   positioning: string;
-  /** 30ml base price. */
-  price30ml: number;
-  /** 50ml upgrade price — same package, more product. */
-  price50ml: number;
+  /** Headline "From $X" figure. */
+  priceFrom: number;
   warrantyLabel: string;
   /** Pill text shown on the card, e.g. "Most Popular". Omit for no pill. */
   badge?: string;
@@ -41,12 +39,11 @@ export const newCarPackages: NewCarPackage[] = [
     nameLines: ["Signature", "Protection"],
     tagline: "Crystal Serum Light • Wheel • Glass • Interior Protection",
     positioning: "The premium entry-level package.",
-    price30ml: 1949,
-    price50ml: 2149,
+    priceFrom: 1949,
     warrantyLabel: "5-Year Coating Protection",
     featured: false,
     inclusions: [
-      "Gtechniq Crystal Serum Light — 30ml or 50ml",
+      "Gtechniq Crystal Serum Light — 30ml",
       "Gtechniq Wheel Coating — All 4 Wheels",
       "Gtechniq G1 ClearVision Smart Glass",
       "Gtechniq Smart Fabric / Leather / Vinyl Interior Protection",
@@ -68,13 +65,12 @@ export const newCarPackages: NewCarPackage[] = [
     nameLines: ["Platinum", "Protection"],
     tagline: "Crystal Serum Ultra • Wheel • Glass • Interior Protection",
     positioning: "The ideal balance of premium protection, longevity and value.",
-    price30ml: 2149,
-    price50ml: 2449,
+    priceFrom: 2149,
     warrantyLabel: "9-Year Coating Protection",
     badge: "Most Popular",
     featured: true,
     inclusions: [
-      "Gtechniq Crystal Serum Ultra — 30ml or 50ml",
+      "Gtechniq Crystal Serum Ultra — 30ml",
       "Gtechniq Wheel Coating — All 4 Wheels",
       "Gtechniq G1 ClearVision Smart Glass",
       "Gtechniq Smart Fabric / Leather / Vinyl Interior Protection",
@@ -88,22 +84,21 @@ export const newCarPackages: NewCarPackage[] = [
     image: "ultimateProtection",
   },
   {
-    id: "ultimate-shield-protection",
+    id: "ultimate-protection",
     index: "03",
     icon: "👑",
-    label: "Ultimate Shield",
-    name: "Ultimate Shield Protection",
-    nameLines: ["Ultimate Shield", "Protection"],
+    label: "Ultimate",
+    name: "Ultimate Protection",
+    nameLines: ["Ultimate", "Protection"],
     tagline: "Crystal Serum Ultra + EXO 5 • Wheel • Glass • Interior Protection",
     positioning: "The complete premium new-car protection system.",
-    price30ml: 2549,
-    price50ml: 2849,
+    priceFrom: 2549,
     warrantyLabel: "9-Year Crystal Serum Ultra Protection + EXO 5 Topcoat",
     badge: "Best Protection",
     featured: false,
     inclusions: [
-      "Gtechniq Crystal Serum Ultra — 30ml or 50ml",
-      "Gtechniq EXO 5 — 30ml or 50ml",
+      "Gtechniq Crystal Serum Ultra — 30ml",
+      "Gtechniq EXO 5 — 30ml",
       "Gtechniq Wheel Coating — All 4 Wheels",
       "Gtechniq G1 ClearVision Smart Glass",
       "Gtechniq Smart Fabric / Leather / Vinyl Interior Protection",
@@ -162,28 +157,28 @@ export interface NewCarComparisonRow {
   feature: string;
   signature: string;
   platinum: string;
-  ultimateShield: string;
+  ultimate: string;
 }
 
 const YES = "✓";
 const NO = "—";
 
 export const newCarComparisonTable: NewCarComparisonRow[] = [
-  { feature: "Crystal Serum Light", signature: YES, platinum: NO, ultimateShield: NO },
-  { feature: "Crystal Serum Ultra", signature: NO, platinum: YES, ultimateShield: YES },
-  { feature: "EXO 5", signature: NO, platinum: NO, ultimateShield: YES },
-  { feature: "Wheel Coating", signature: YES, platinum: YES, ultimateShield: YES },
-  { feature: "G1 ClearVision Smart Glass", signature: YES, platinum: YES, ultimateShield: YES },
-  { feature: "Interior Protection", signature: YES, platinum: YES, ultimateShield: YES },
-  { feature: "Wash", signature: YES, platinum: YES, ultimateShield: YES },
-  { feature: "Clay / Decontamination", signature: YES, platinum: YES, ultimateShield: YES },
-  { feature: "1-Hour Machine Polish / Buff", signature: YES, platinum: YES, ultimateShield: YES },
-  { feature: "Paint Preparation", signature: YES, platinum: YES, ultimateShield: YES },
+  { feature: "Crystal Serum Light", signature: YES, platinum: NO, ultimate: NO },
+  { feature: "Crystal Serum Ultra", signature: NO, platinum: YES, ultimate: YES },
+  { feature: "EXO 5", signature: NO, platinum: NO, ultimate: YES },
+  { feature: "Wheel Coating", signature: YES, platinum: YES, ultimate: YES },
+  { feature: "G1 ClearVision Smart Glass", signature: YES, platinum: YES, ultimate: YES },
+  { feature: "Interior Protection", signature: YES, platinum: YES, ultimate: YES },
+  { feature: "Wash", signature: YES, platinum: YES, ultimate: YES },
+  { feature: "Clay / Decontamination", signature: YES, platinum: YES, ultimate: YES },
+  { feature: "1-Hour Machine Polish / Buff", signature: YES, platinum: YES, ultimate: YES },
+  { feature: "Paint Preparation", signature: YES, platinum: YES, ultimate: YES },
   {
     feature: "Coating Protection",
     signature: "5 Years",
     platinum: "9 Years",
-    ultimateShield: "9 Years + EXO 5 Topcoat",
+    ultimate: "9 Years + EXO 5 Topcoat",
   },
 ];
 
@@ -247,18 +242,12 @@ export const newCarFaqs: NewCarFaq[] = [
     id: "what-does-exo5-add",
     question: "What does EXO 5 add?",
     answer:
-      "EXO 5 is an additional hydrophobic topcoat applied over Crystal Serum Ultra, designed to enhance water repellency and surface performance — included as standard in Ultimate Shield Protection.",
+      "EXO 5 is an additional hydrophobic topcoat applied over Crystal Serum Ultra, designed to enhance water repellency and surface performance — included as standard in Ultimate Protection.",
   },
   {
     id: "interior-protection-included",
     question: "Does the package protect the interior too?",
     answer:
       "Yes. All three packages include Gtechniq Smart Fabric / Leather / Vinyl Interior Protection, alongside paint, wheel and glass coating.",
-  },
-  {
-    id: "30ml-vs-50ml",
-    question: "What's the difference between 30ml and 50ml?",
-    answer:
-      "Both use the same coating system and package inclusions — the 50ml option simply provides additional coating product, suitable where greater product coverage is needed for your vehicle. Your installer can confirm which size is right for you.",
   },
 ];
