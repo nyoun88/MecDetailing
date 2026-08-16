@@ -110,7 +110,7 @@ export const newCarPackages: NewCarPackage[] = [
       "9-Year Crystal Serum Ultra Protection",
       "EXO 5 Hydrophobic Topcoat",
     ],
-    image: "benefitHydrophobic",
+    image: "waterBeading",
   },
 ];
 
