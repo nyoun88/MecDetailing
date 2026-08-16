@@ -83,7 +83,7 @@ export default function NewCarProtectionPage() {
         body="Complete paint, wheel, glass and interior protection packages engineered to keep your new vehicle looking better for longer."
         image={images.benefitProtection}
         imagePosition="60% 55%"
-        primaryCta={{ label: "Get A Quote", href: "/quote" }}
+        primaryCta={{ label: "Get A Quote", href: "/new-car-protection/quote" }}
         secondaryCta={{ label: "Compare Packages", href: "#compare" }}
       />
 
@@ -122,7 +122,7 @@ export default function NewCarProtectionPage() {
               finish.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <Button href="/quote" size="lg" showArrow>
+              <Button href="/new-car-protection/quote" size="lg" showArrow>
                 Get Your Quote
               </Button>
               {business.contact.phoneHref && (

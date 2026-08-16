@@ -88,7 +88,7 @@ export function NewCarPackageCard({ pkg }: { pkg: NewCarPackage }) {
         </dl>
 
         <div className="mt-6 flex items-center justify-between">
-          <ArrowLink href="/quote" onClick={() => track.packageViewed(pkg.id)}>
+          <ArrowLink href="/new-car-protection/quote" onClick={() => track.packageViewed(pkg.id)}>
             Get A Quote
           </ArrowLink>
         </div>

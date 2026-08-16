@@ -1,0 +1,48 @@
+import type { NewCarQuoteFormData } from "@/data/new-car-quote";
+
+export type NewCarQuoteErrors = Partial<Record<keyof NewCarQuoteFormData, string>>;
+
+const currentYear = new Date().getFullYear();
+
+/** Same three field groups as validate-quote.ts, condensed to this
+ *  form's three steps: Vehicle, Package, Contact. */
+export function validateNewCarQuoteStep(
+  step: number,
+  data: NewCarQuoteFormData,
+): NewCarQuoteErrors {
+  const errors: NewCarQuoteErrors = {};
+
+  if (step === 0) {
+    if (!data.vehicleMake.trim()) errors.vehicleMake = "Enter your vehicle's make.";
+    if (!data.vehicleModel.trim()) errors.vehicleModel = "Enter your vehicle's model.";
+    const year = Number(data.vehicleYear);
+    if (!data.vehicleYear.trim()) {
+      errors.vehicleYear = "Enter your vehicle's year.";
+    } else if (!Number.isInteger(year) || year < 1980 || year > currentYear + 1) {
+      errors.vehicleYear = `Enter a year between 1980 and ${currentYear + 1}.`;
+    }
+  }
+
+  if (step === 1) {
+    if (!data.packageId) errors.packageId = "Select a package.";
+  }
+
+  if (step === 2) {
+    if (!data.firstName.trim()) errors.firstName = "Enter your first name.";
+    if (!data.phone.trim()) {
+      errors.phone = "Enter a phone number.";
+    } else if (!/^[0-9+()\s-]{6,}$/.test(data.phone.trim())) {
+      errors.phone = "Enter a valid phone number.";
+    }
+    if (!data.email.trim()) {
+      errors.email = "Enter an email address.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
+      errors.email = "Enter a valid email address.";
+    }
+    if (!data.agreedToContact) {
+      errors.agreedToContact = "Please confirm you're happy to be contacted.";
+    }
+  }
+
+  return errors;
+}
