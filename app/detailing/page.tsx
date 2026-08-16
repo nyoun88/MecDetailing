@@ -12,7 +12,6 @@ import { DetailingServiceFinder } from "@/components/sections/detailing-service-
 import { DetailingBeforeAfter } from "@/components/sections/detailing-before-after";
 import { DetailingWhyMec } from "@/components/sections/detailing-why-mec";
 import { DetailingVsCeramic } from "@/components/sections/detailing-vs-ceramic";
-import { Reviews } from "@/components/sections/reviews";
 import { DetailingFaq } from "@/components/sections/detailing-faq";
 import { images } from "@/data/images";
 import { business } from "@/data/business";
@@ -110,7 +109,10 @@ export default function DetailingPage() {
       <DetailingWhyMec />
       <DetailingVsCeramic />
 
-      <Reviews heading="Brisbane Drivers Trust MEC" />
+      {/* Reviews section intentionally omitted until real customer reviews
+          are supplied — see components/sections/reviews.tsx, which already
+          handles the empty state honestly and can be dropped back in here
+          (with heading="Brisbane Drivers Trust MEC") once they exist. */}
 
       <DetailingFaq />
 
