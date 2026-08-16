@@ -16,16 +16,16 @@ export default function TermsPage() {
         <h1 className="text-[clamp(1.9rem,4vw,3rem)] font-bold tracking-tight text-ink">
           Terms &amp; Conditions
         </h1>
-        <p className="mt-4 text-sm text-ink-muted">Last updated: 12 August 2026</p>
+        <p className="mt-4 text-sm text-ink-muted">Last updated: 16 August 2026</p>
 
         <div className="mt-10 space-y-10 text-sm leading-relaxed text-ink-muted">
           <p>
             These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern the
-            provision of ceramic coating, paint correction and vehicle
-            detailing services by {business.name} (&ldquo;MEC
-            Detailing&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo; or
-            &ldquo;our&rdquo;) to any person who requests a quote, makes a
-            booking or otherwise engages our services (&ldquo;you&rdquo;,
+            provision of ceramic coating, new car protection, paint
+            correction and vehicle detailing services by {business.name}{" "}
+            (&ldquo;MEC Detailing&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;
+            or &ldquo;our&rdquo;) to any person who requests a quote, makes
+            a booking or otherwise engages our services (&ldquo;you&rdquo;,
             &ldquo;your&rdquo; or the &ldquo;customer&rdquo;).
           </p>
           <p>
@@ -126,8 +126,11 @@ export default function TermsPage() {
               manufacturer-backed warranty, the specific term (5 years, up
               to 9 years, or otherwise) is confirmed at the time of
               installation based on the product applied — see our Ceramic
-              Packages page for a general overview of what each package
-              includes.
+              Coating and New Car Protection pages for a general overview
+              of what each package includes. This applies equally to
+              ceramic coating installed as a standalone service and to the
+              ceramic coating installed as part of a New Car Protection
+              package.
             </p>
             <p>
               Warranty coverage is conditional on the maintenance
