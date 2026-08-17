@@ -14,7 +14,7 @@ const exo5 = protectionExtras.find((extra) => extra.id === "exo-5-topcoat")!;
  * Focuses on the technology/expertise behind the protection rather than
  * pricing — figures shown (warranty terms) are read from data/packages.ts
  * and data/ceramic-page.ts, not hardcoded, so they can't drift from what's
- * actually sold on /packages.
+ * actually sold on /ceramic-coating.
  */
 export function WhyMecCoatingSystems() {
   return (
@@ -61,7 +61,7 @@ export function WhyMecCoatingSystems() {
           </p>
 
           <div className="mt-8">
-            <ArrowLink href="/packages">View Ceramic Packages</ArrowLink>
+            <ArrowLink href="/ceramic-coating">View Ceramic Packages</ArrowLink>
           </div>
         </Reveal>
       </Container>

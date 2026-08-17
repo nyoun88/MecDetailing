@@ -33,7 +33,7 @@ export default function NotFound() {
         <div className="hairline mt-16" />
         <ul className="flex flex-wrap items-center gap-x-8 gap-y-2 pt-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
           <li>
-            <ArrowLink href="/packages" className="text-[11px] tracking-[0.16em]">
+            <ArrowLink href="/ceramic-coating" className="text-[11px] tracking-[0.16em]">
               Ceramic Coatings
             </ArrowLink>
           </li>

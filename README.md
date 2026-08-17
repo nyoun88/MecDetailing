@@ -53,7 +53,7 @@ Environment Variables** rather than committing `.env.local`.
 | Route | Purpose |
 |---|---|
 | `/` | Homepage — full funnel from hero through to FAQ and final CTA |
-| `/packages` | Ceramic package comparison, upgrades, Gtechniq explainer |
+| `/ceramic-coating` | Ceramic package comparison, upgrades, Gtechniq explainer |
 | `/why-mec` | Brand/credibility story |
 | `/faq` | Full searchable FAQ, grouped by category |
 | `/quote` | 5-step lead-capture funnel → `/api/quote` |

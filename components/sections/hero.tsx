@@ -88,7 +88,7 @@ export function Hero() {
               Get Your Free Quote
             </Button>
             <ArrowLink
-              href="/packages"
+              href="/ceramic-coating"
               onClick={() => track.ctaClicked("Explore Ceramic Coatings", "hero")}
             >
               Explore Ceramic Coatings

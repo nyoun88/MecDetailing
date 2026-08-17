@@ -8,7 +8,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { faqCategories, faqs, type FaqCategory } from "@/data/faqs";
 
 const categoryCta: Partial<Record<FaqCategory, { label: string; href: string }>> = {
-  "Ceramic Coating": { label: "View Ceramic Packages", href: "/packages" },
+  "Ceramic Coating": { label: "View Ceramic Packages", href: "/ceramic-coating" },
   "New Car Protection": { label: "View New Car Protection", href: "/new-car-protection" },
   Detailing: { label: "View Detailing Services", href: "/detailing" },
   Booking: { label: "Get My Free Quote", href: "/quote" },

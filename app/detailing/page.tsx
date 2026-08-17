@@ -146,7 +146,7 @@ export default function DetailingPage() {
               <Button href="/quote" size="lg" showArrow>
                 Get My Free Quote
               </Button>
-              <ArrowLink href="/packages">View Ceramic Packages</ArrowLink>
+              <ArrowLink href="/ceramic-coating">View Ceramic Packages</ArrowLink>
             </div>
           </Reveal>
 

@@ -50,7 +50,7 @@ export function DetailingVsCeramic() {
                 maintenance easier and protect your vehicle&rsquo;s finish.
               </p>
             </div>
-            <ArrowLink href="/packages" className="mt-8">
+            <ArrowLink href="/ceramic-coating" className="mt-8">
               Explore Ceramic Protection
             </ArrowLink>
           </Reveal>

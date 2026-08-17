@@ -14,14 +14,14 @@ const crystalSerumUltraPrice = ceramicCoatings.find((c) => c.id === "crystal-ser
 
 // The three protection extras actually bundled into every new-car
 // package (matches each package's `additionalProtection` field:
-// "Wheel + Glass + Interior"). Trim Protection is a /packages-only
+// "Wheel + Glass + Interior"). Trim Protection is a /ceramic-coating-only
 // extra, not part of these bundles, so it's deliberately excluded here.
 const BUNDLED_EXTRA_IDS = ["interior-protection", "wheel-protection", "glass-protection"];
 const bundledExtrasValue = protectionExtras
   .filter((extra) => BUNDLED_EXTRA_IDS.includes(extra.id))
   .reduce((sum, extra) => sum + extra.price, 0);
 
-// EXO 5's standalone price, now that it's sold as its own /packages extra —
+// EXO 5's standalone price, now that it's sold as its own /ceramic-coating extra —
 // only Ultimate Shield includes it, on top of the three extras above.
 const exo5Price = protectionExtras.find((extra) => extra.id === "exo-5-topcoat")!.price;
 
@@ -55,7 +55,7 @@ export interface NewCarPackage {
    * combinedIndividualValue/potentialSaving are only omitted if a package
    * ever includes something with no confirmed standalone price anywhere
    * on the site — not currently the case for any package below, now that
-   * EXO 5 has its own /packages price.
+   * EXO 5 has its own /ceramic-coating price.
    */
   bundleValue: {
     standaloneCoatingLabel: string;
@@ -158,7 +158,7 @@ export const newCarPackages: NewCarPackage[] = [
       standaloneCoatingPrice: crystalSerumUltraPrice,
       // Ultimate Shield is the only package that also includes EXO 5, so
       // its extras value is the shared wheel/glass/interior total plus
-      // EXO 5's own /packages price — not just bundledExtrasValue.
+      // EXO 5's own /ceramic-coating price — not just bundledExtrasValue.
       extrasValue: bundledExtrasValue + exo5Price,
       combinedIndividualValue: crystalSerumUltraPrice + bundledExtrasValue + exo5Price,
       potentialSaving: crystalSerumUltraPrice + bundledExtrasValue + exo5Price - 2549,

@@ -8,7 +8,7 @@ import { formatCurrency } from "@/lib/utils";
  * after the package cards. The breakdown table's figures are read
  * straight from newCarPackages[].bundleValue — computed in
  * data/new-car-protection.ts from the real standalone ceramic prices and
- * real extras prices (including EXO 5's /packages price), never
+ * real extras prices (including EXO 5's /ceramic-coating price), never
  * hardcoded here.
  */
 export function NewCarBundleValue() {

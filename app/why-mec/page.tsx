@@ -59,7 +59,7 @@ export default function WhyMecPage() {
         image={images.whyMecHero}
         imagePosition="62% 55%"
         primaryCta={{ label: "Get A Free Quote", href: "/quote" }}
-        secondaryCta={{ label: "View Ceramic Packages", href: "/packages" }}
+        secondaryCta={{ label: "View Ceramic Packages", href: "/ceramic-coating" }}
       />
 
       <WhyMecDifferent />
@@ -107,7 +107,7 @@ export default function WhyMecPage() {
               <Button href="/quote" size="lg" showArrow>
                 Get My Free Quote
               </Button>
-              <ArrowLink href="/packages">View Ceramic Packages</ArrowLink>
+              <ArrowLink href="/ceramic-coating">View Ceramic Packages</ArrowLink>
             </div>
           </Reveal>
 

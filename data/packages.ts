@@ -1,7 +1,7 @@
 /**
  * The two standalone Gtechniq ceramic coatings MEC installs — the core
- * product of /packages. Deliberately NOT called "packages" anywhere
- * customer-facing (see AGENTS notes on /packages repositioning): these are
+ * product of /ceramic-coating. Deliberately NOT called "packages" anywhere
+ * customer-facing (see AGENTS notes on /ceramic-coating repositioning): these are
  * presented as the coating itself, with wheel/glass/interior/trim
  * protection offered separately as optional extras (data/ceramic-page.ts),
  * not bundled in. Complete bundled protection lives on

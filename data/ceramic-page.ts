@@ -1,5 +1,5 @@
 /**
- * Supporting data for the restructured /packages page — everything that
+ * Supporting data for the restructured /ceramic-coating page — everything that
  * isn't the two core coating products themselves (see data/packages.ts).
  * Kept separate since none of this is shared with the homepage teaser or
  * the quote funnel, unlike data/packages.ts.

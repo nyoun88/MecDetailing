@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Ceramic Coating Brisbane — Crystal Serum Light & Ultra",
   description:
     "Professional Gtechniq ceramic coating in Brisbane. Choose Crystal Serum Light (5-year) or Crystal Serum Ultra (9-year) from $1,199, then add optional wheel, glass, interior, trim or EXO 5 topcoat protection.",
-  alternates: { canonical: "/packages" },
+  alternates: { canonical: "/ceramic-coating" },
 };
 
 // Service + Offer structured data — one entry per coating, using the same
@@ -47,7 +47,7 @@ const coatingSchema = packages.map((pkg) => ({
     price: pkg.priceFrom,
     priceCurrency: "AUD",
     availability: "https://schema.org/InStock",
-    url: `${business.siteUrl}/packages#${pkg.id}`,
+    url: `${business.siteUrl}/ceramic-coating#${pkg.id}`,
   },
 }));
 
@@ -67,7 +67,7 @@ const faqSchema = {
   })),
 };
 
-export default function PackagesPage() {
+export default function CeramicCoatingPage() {
   return (
     <>
       <script

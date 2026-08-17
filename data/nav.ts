@@ -5,7 +5,7 @@ export interface NavLink {
 
 export const primaryNav: NavLink[] = [
   { label: "Home", href: "/" },
-  { label: "Ceramic Coatings", href: "/packages" },
+  { label: "Ceramic Coatings", href: "/ceramic-coating" },
   { label: "New Car", href: "/new-car-protection" },
   { label: "Detailing", href: "/detailing" },
   { label: "Why MEC", href: "/why-mec" },
@@ -14,7 +14,7 @@ export const primaryNav: NavLink[] = [
 
 export const footerNav: NavLink[] = [
   { label: "Home", href: "/" },
-  { label: "Ceramic Coatings", href: "/packages" },
+  { label: "Ceramic Coatings", href: "/ceramic-coating" },
   { label: "Detailing", href: "/detailing" },
   { label: "Why MEC", href: "/why-mec" },
   { label: "FAQ", href: "/faq" },
@@ -22,9 +22,9 @@ export const footerNav: NavLink[] = [
 ];
 
 export const footerServices: NavLink[] = [
-  { label: "Ceramic Coating", href: "/packages" },
-  { label: "Wheel Coating", href: "/packages" },
-  { label: "Glass Coating", href: "/packages" },
+  { label: "Ceramic Coating", href: "/ceramic-coating" },
+  { label: "Wheel Coating", href: "/ceramic-coating" },
+  { label: "Glass Coating", href: "/ceramic-coating" },
   { label: "Paint Correction", href: "/detailing" },
   { label: "Interior Detail", href: "/detailing" },
   { label: "Full Detail", href: "/detailing" },
