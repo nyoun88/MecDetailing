@@ -9,8 +9,10 @@ import { PackagesSection } from "@/components/sections/packages-section";
 import { PaintCorrection } from "@/components/sections/paint-correction";
 import { Gallery } from "@/components/sections/gallery";
 import { Stats } from "@/components/sections/stats";
+import { Reviews } from "@/components/sections/reviews";
 import { FaqPreview } from "@/components/sections/faq-preview";
 import { FinalCta } from "@/components/sections/final-cta";
+import { getGooglePlaceData } from "@/lib/google-reviews";
 
 export const metadata: Metadata = {
   title: "Ceramic Coating Brisbane",
@@ -19,10 +21,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-export default function Home() {
+export default async function Home() {
+  const googleData = await getGooglePlaceData();
+
   return (
     <>
-      <Hero />
+      <Hero googleRating={googleData?.rating} googleReviewCount={googleData?.reviewCount} />
       <Statement />
       <TrustBar />
       <CeramicStory />
@@ -32,6 +36,7 @@ export default function Home() {
       <PaintCorrection />
       <Gallery />
       <Stats />
+      <Reviews heading="What Brisbane Drivers Say" data={googleData} />
       <FaqPreview />
       <FinalCta />
     </>

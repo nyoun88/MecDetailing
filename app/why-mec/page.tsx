@@ -18,6 +18,7 @@ import { Reviews } from "@/components/sections/reviews";
 import { WhyMecFaq } from "@/components/sections/why-mec-faq";
 import { whyMecSections, whyMecFaqs } from "@/data/why-mec";
 import { images } from "@/data/images";
+import { getGooglePlaceData } from "@/lib/google-reviews";
 
 const preparationSection = whyMecSections.find((s) => s.id === "preparation-standards")!;
 const aftercareSection = whyMecSections.find((s) => s.id === "aftercare")!;
@@ -45,7 +46,9 @@ const faqSchema = {
   })),
 };
 
-export default function WhyMecPage() {
+export default async function WhyMecPage() {
+  const googleData = await getGooglePlaceData();
+
   return (
     <>
       <script
@@ -77,7 +80,7 @@ export default function WhyMecPage() {
       <WhyMecAftercare />
       <WhyMecComparison />
 
-      <Reviews heading="Trusted By Brisbane Vehicle Owners" />
+      <Reviews heading="Trusted By Brisbane Vehicle Owners" data={googleData} />
 
       <WhyMecFaq />
 

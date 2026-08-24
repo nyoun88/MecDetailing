@@ -6,12 +6,29 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { ArrowLink } from "@/components/ui/arrow-link";
-import { reviews } from "@/data/reviews";
 import { business } from "@/data/business";
+import type { GooglePlaceData } from "@/lib/google-reviews";
 
-export function Reviews({ heading = "What Our Customers Say" }: { heading?: string }) {
+export function Reviews({
+  heading = "What Our Customers Say",
+  data,
+}: {
+  heading?: string;
+  /**
+   * Live Google Business Profile data, fetched server-side (see
+   * lib/google-reviews.ts) by whichever page.tsx renders this section —
+   * Reviews itself is a client component (for the scroll carousel) and
+   * can't fetch. Pass null/undefined when GOOGLE_PLACES_API_KEY or
+   * GOOGLE_PLACE_ID aren't configured yet, or the request failed — the
+   * section falls back to the static rating with no written reviews.
+   */
+  data?: GooglePlaceData | null;
+}) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const { rating, url } = business.googleReviews;
+  const { url } = business.googleReviews;
+  const rating = data?.rating ?? business.googleReviews.rating;
+  const reviewCount = data?.reviewCount;
+  const reviews = data?.reviews ?? [];
 
   function scrollBy(direction: 1 | -1) {
     trackRef.current?.scrollBy({ left: direction * 420, behavior: "smooth" });
@@ -31,10 +48,11 @@ export function Reviews({ heading = "What Our Customers Say" }: { heading?: stri
         </div>
 
         {reviews.length === 0 ? (
-          // Individual written reviews haven't been collected into
-          // data/reviews.ts yet, but the business's real Google rating has
-          // been confirmed — show that honestly instead of either an empty
-          // placeholder or fabricated testimonials.
+          // Either the Google Places integration isn't configured yet
+          // (GOOGLE_PLACES_API_KEY / GOOGLE_PLACE_ID), or the profile has
+          // no written reviews to pull yet — either way, show the
+          // confirmed rating honestly instead of an empty placeholder or
+          // fabricated testimonials.
           <Reveal delay={0.1} className="mt-14 max-w-lg rounded-[3px] border border-border bg-bg-card p-10">
             <div className="flex gap-1 text-accent" aria-label={`${rating} out of 5 stars`}>
               {Array.from({ length: 5 }).map((_, idx) => (
@@ -43,6 +61,7 @@ export function Reviews({ heading = "What Our Customers Say" }: { heading?: stri
             </div>
             <p className="mt-5 text-2xl font-bold text-ink">
               {rating.toFixed(1)} Rating On Google
+              {reviewCount ? ` (${reviewCount} Reviews)` : ""}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-ink-muted">
               Individual written reviews will appear here as they&rsquo;re
@@ -75,8 +94,10 @@ export function Reviews({ heading = "What Our Customers Say" }: { heading?: stri
                     ))}
                   </div>
                   <p className="mt-6 text-xl leading-snug text-ink">&ldquo;{review.text}&rdquo;</p>
-                  <p className="mt-8 text-sm font-semibold text-ink">{review.customerName}</p>
-                  <p className="text-xs text-ink-muted">{review.vehicle}</p>
+                  <p className="mt-8 text-sm font-semibold text-ink">{review.authorName}</p>
+                  {review.relativeTime && (
+                    <p className="text-xs text-ink-muted">{review.relativeTime} on Google</p>
+                  )}
                 </article>
               ))}
             </div>

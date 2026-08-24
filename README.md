@@ -87,9 +87,6 @@ stats — everything the business would want to change lives in
 - `packages.ts` — package pricing, inclusions, upgrades, comparison table
 - `stats.ts`, `benefits.ts`, `process.ts` — homepage credibility content
 - `faqs.ts` — every FAQ, categorised
-- `reviews.ts` — **empty by design.** No reviews were supplied, so none
-  were invented. Add real reviews here and the homepage/FAQ sections
-  pick them up automatically.
 - `trust.ts` — logos in the "trusted by" bar
 - `gallery.ts` — project gallery items
 - `images.ts` — every image slot the site uses, with the exact filename
@@ -105,8 +102,11 @@ per the brief:
   (`components/ui/image-placeholder.tsx`) showing the filename it
   expects. Drop real photos into `/public/images/` using those exact
   names and swap the placeholder for `next/image` in each section.
-- **Customer reviews** (`data/reviews.ts`) — empty until real reviews
-  exist.
+- **Customer reviews** — pulled live from the Google Business Profile via
+  `lib/google-reviews.ts` (Places API). Requires `GOOGLE_PLACES_API_KEY`
+  and `GOOGLE_PLACE_ID` (see `.env.example`); without them, the site
+  falls back to the static rating in `data/business.ts` with no written
+  reviews shown.
 - **Legal copy** (`/privacy-policy`, `/terms`) — structural pages only;
   need real policy text.
 - **Analytics** (`lib/analytics.ts`) — event tracking calls

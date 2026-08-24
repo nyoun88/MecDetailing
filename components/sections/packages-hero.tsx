@@ -6,6 +6,7 @@ import { ArrowLink } from "@/components/ui/arrow-link";
 import { Photo } from "@/components/ui/photo";
 import { GoogleRatingBadge } from "@/components/ui/google-rating-badge";
 import { images, type ImageSlot } from "@/data/images";
+import { getGooglePlaceData } from "@/lib/google-reviews";
 
 interface HeroCta {
   label: string;
@@ -13,7 +14,7 @@ interface HeroCta {
   onClick?: () => void;
 }
 
-export function PageHero({
+export async function PageHero({
   eyebrow,
   heading,
   body,
@@ -32,6 +33,8 @@ export function PageHero({
   /** Optional secondary link CTA, shown next to the primary button. */
   secondaryCta?: HeroCta;
 }) {
+  const googleData = await getGooglePlaceData();
+
   return (
     <section className="relative flex min-h-[56vh] items-end overflow-hidden bg-bg md:min-h-[68vh]">
       <div className="absolute inset-0">
@@ -71,7 +74,11 @@ export function PageHero({
               )}
             </div>
           )}
-          <GoogleRatingBadge className="mt-8" />
+          <GoogleRatingBadge
+            className="mt-8"
+            rating={googleData?.rating}
+            reviewCount={googleData?.reviewCount}
+          />
         </Reveal>
       </Container>
     </section>

@@ -17,6 +17,7 @@ import { DetailingFaq } from "@/components/sections/detailing-faq";
 import { images } from "@/data/images";
 import { business } from "@/data/business";
 import { detailingServices, detailingIntro, detailingFaqs } from "@/data/detailing";
+import { getGooglePlaceData } from "@/lib/google-reviews";
 
 // Service + Offer structured data — one entry per service, using the same
 // `detailingServices` array DetailingPackages renders below so pricing
@@ -78,7 +79,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/detailing" },
 };
 
-export default function DetailingPage() {
+export default async function DetailingPage() {
+  const googleData = await getGooglePlaceData();
+
   return (
     <>
       <script
@@ -110,7 +113,7 @@ export default function DetailingPage() {
       <DetailingWhyMec />
       <DetailingVsCeramic />
 
-      <Reviews heading="Brisbane Drivers Trust MEC" />
+      <Reviews heading="Brisbane Drivers Trust MEC" data={googleData} />
 
       <DetailingFaq />
 

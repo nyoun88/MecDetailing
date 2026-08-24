@@ -5,6 +5,7 @@ import Footer from "@/components/layout/footer";
 import MobileCta from "@/components/layout/mobile-cta";
 import { MotionProvider } from "@/components/providers/motion-provider";
 import { business } from "@/data/business";
+import { getGooglePlaceData } from "@/lib/google-reviews";
 import "./globals.css";
 
 const inter = Inter({
@@ -83,7 +84,23 @@ const localBusinessSchema = {
   priceRange: "$$",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // AggregateRating is only added when we have a real review count from
+  // the Places API (see lib/google-reviews.ts) — schema.org/Google both
+  // expect ratingCount alongside ratingValue, and it isn't available from
+  // the static business.googleReviews fallback.
+  const googleData = await getGooglePlaceData();
+  const schema = googleData
+    ? {
+        ...localBusinessSchema,
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: googleData.rating,
+          ratingCount: googleData.reviewCount,
+        },
+      }
+    : localBusinessSchema;
+
   return (
     <html
       lang="en"
@@ -93,7 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="flex min-h-full flex-col bg-bg pb-20 text-ink md:pb-0">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
         <MotionProvider>
           <Navbar />

@@ -4,9 +4,11 @@ import { Logo } from "@/components/ui/logo";
 import { GoogleRatingBadge } from "@/components/ui/google-rating-badge";
 import { business } from "@/data/business";
 import { footerNav, footerServices, legalNav } from "@/data/nav";
+import { getGooglePlaceData } from "@/lib/google-reviews";
 
-export default function Footer() {
+export default async function Footer() {
   const year = new Date().getFullYear();
+  const googleData = await getGooglePlaceData();
 
   return (
     <footer className="bg-bg">
@@ -19,7 +21,7 @@ export default function Footer() {
               Premium Vehicle Protection
             </p>
           </div>
-          <GoogleRatingBadge />
+          <GoogleRatingBadge rating={googleData?.rating} reviewCount={googleData?.reviewCount} />
         </div>
 
         <div className="mt-16 grid gap-10 border-t border-border pt-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">

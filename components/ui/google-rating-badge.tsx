@@ -8,9 +8,23 @@ import { cn } from "@/lib/utils";
  * PageHero and footer so the rating reads consistently everywhere it
  * appears (deliberately not repeated in DetailingTrustStrip — PageHero
  * already shows it immediately above on that page).
+ *
+ * `rating`/`reviewCount` are optional overrides for the live values from
+ * lib/google-reviews.ts — callers that can fetch live data (Footer,
+ * PageHero, and the homepage via Hero) pass them through; when omitted
+ * this falls back to the static business.googleReviews.rating with no
+ * count shown, same as before the live integration existed.
  */
-export function GoogleRatingBadge({ className }: { className?: string }) {
-  const { rating, url } = business.googleReviews;
+export function GoogleRatingBadge({
+  className,
+  rating = business.googleReviews.rating,
+  reviewCount,
+}: {
+  className?: string;
+  rating?: number;
+  reviewCount?: number;
+}) {
+  const { url } = business.googleReviews;
 
   return (
     <a
@@ -28,7 +42,7 @@ export function GoogleRatingBadge({ className }: { className?: string }) {
         ))}
       </span>
       <span className="border-b border-current pb-0.5">
-        {rating.toFixed(1)} On Google
+        {rating.toFixed(1)} On Google{reviewCount ? ` (${reviewCount})` : ""}
       </span>
     </a>
   );

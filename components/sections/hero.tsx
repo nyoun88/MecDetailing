@@ -12,7 +12,16 @@ import { business } from "@/data/business";
 import { track } from "@/lib/analytics";
 import { EASE } from "@/lib/motion";
 
-export function Hero() {
+export function Hero({
+  googleRating,
+  googleReviewCount,
+}: {
+  // Live values from lib/google-reviews.ts, fetched server-side in
+  // app/page.tsx — Hero is a client component and can't fetch itself.
+  // Falls back to the static business.googleReviews.rating when omitted.
+  googleRating?: number;
+  googleReviewCount?: number;
+}) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
 
@@ -110,7 +119,7 @@ export function Hero() {
               <li key={spec}>{spec}</li>
             ))}
           </ul>
-          <GoogleRatingBadge />
+          <GoogleRatingBadge rating={googleRating} reviewCount={googleReviewCount} />
         </Container>
       </motion.div>
     </section>
