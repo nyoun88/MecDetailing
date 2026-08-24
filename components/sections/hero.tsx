@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { ArrowLink } from "@/components/ui/arrow-link";
+import { GoogleRatingBadge } from "@/components/ui/google-rating-badge";
 import { images } from "@/data/images";
 import { business } from "@/data/business";
 import { track } from "@/lib/analytics";
@@ -103,12 +104,13 @@ export function Hero() {
           className="hairline"
         />
 
-        <Container>
-          <ul className="flex flex-wrap items-center gap-x-8 gap-y-2 py-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
+        <Container className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 py-5">
+          <ul className="flex flex-wrap items-center gap-x-8 gap-y-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
             {business.heroSpecs.map((spec) => (
               <li key={spec}>{spec}</li>
             ))}
           </ul>
+          <GoogleRatingBadge />
         </Container>
       </motion.div>
     </section>

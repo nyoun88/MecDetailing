@@ -12,16 +12,23 @@ export function ArrowLink({
   children,
   className,
   onClick,
+  target,
+  rel,
 }: {
   href: string;
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  /** For external links — e.g. target="_blank" to leave the site in a new tab. */
+  target?: string;
+  rel?: string;
 }) {
   return (
     <Link
       href={href}
       onClick={onClick}
+      target={target}
+      rel={rel}
       className={cn(
         "group/link inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:text-accent",
         className,

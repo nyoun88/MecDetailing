@@ -4,6 +4,7 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { Button } from "@/components/ui/button";
 import { ArrowLink } from "@/components/ui/arrow-link";
 import { Photo } from "@/components/ui/photo";
+import { GoogleRatingBadge } from "@/components/ui/google-rating-badge";
 import { images, type ImageSlot } from "@/data/images";
 
 interface HeroCta {
@@ -70,6 +71,7 @@ export function PageHero({
               )}
             </div>
           )}
+          <GoogleRatingBadge className="mt-8" />
         </Reveal>
       </Container>
     </section>

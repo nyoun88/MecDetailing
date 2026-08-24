@@ -14,6 +14,7 @@ import { WhyMecCoatingSystems } from "@/components/sections/why-mec-coating-syst
 import { WhyMecResults } from "@/components/sections/why-mec-results";
 import { WhyMecAftercare } from "@/components/sections/why-mec-aftercare";
 import { WhyMecComparison } from "@/components/sections/why-mec-comparison";
+import { Reviews } from "@/components/sections/reviews";
 import { WhyMecFaq } from "@/components/sections/why-mec-faq";
 import { whyMecSections, whyMecFaqs } from "@/data/why-mec";
 import { images } from "@/data/images";
@@ -75,6 +76,9 @@ export default function WhyMecPage() {
       <EditorialSplit section={aftercareSection} index="09" reverse />
       <WhyMecAftercare />
       <WhyMecComparison />
+
+      <Reviews heading="Trusted By Brisbane Vehicle Owners" />
+
       <WhyMecFaq />
 
       <section className="relative flex min-h-[70vh] items-center overflow-hidden bg-bg">

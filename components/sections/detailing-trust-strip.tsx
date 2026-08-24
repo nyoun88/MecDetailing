@@ -3,11 +3,11 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 
 /**
- * Slim credibility strip directly under the hero. Deliberately doesn't
- * include a specific review/star-rating claim — data/reviews.ts has no
- * real reviews supplied yet, so asserting a rating here would be an
- * invented claim. See DetailingReviews (reuses the site's existing empty
- * -state-aware Reviews component) for honest social proof instead.
+ * Slim credibility strip directly under the hero. Doesn't repeat the
+ * Google rating badge — PageHero (see components/sections/packages-hero.tsx)
+ * already shows it immediately above this section, and stacking the same
+ * badge twice within a few hundred pixels read as redundant rather than
+ * reinforcing.
  */
 const trustPoints: { icon: LucideIcon; label: string }[] = [
   { icon: Clock, label: "5+ Years Experience" },

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
+import { GoogleRatingBadge } from "@/components/ui/google-rating-badge";
 import { business } from "@/data/business";
 import { footerNav, footerServices, legalNav } from "@/data/nav";
 
@@ -11,10 +12,15 @@ export default function Footer() {
     <footer className="bg-bg">
       <div className="hairline" />
       <Container className="py-16 md:py-24">
-        <Logo className="h-12 w-auto md:h-16" />
-        <p className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-accent">
-          Premium Vehicle Protection
-        </p>
+        <div className="flex flex-wrap items-start justify-between gap-6">
+          <div>
+            <Logo className="h-12 w-auto md:h-16" />
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+              Premium Vehicle Protection
+            </p>
+          </div>
+          <GoogleRatingBadge />
+        </div>
 
         <div className="mt-16 grid gap-10 border-t border-border pt-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
