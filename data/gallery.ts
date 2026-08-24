@@ -39,6 +39,10 @@ export const galleryItems: GalleryItem[] = [
   { id: "g14", category: "Ceramic", image: "/images/gallery/ceramic-05.jpg", alt: "Rolls-Royce Spirit of Ecstasy and grille after ceramic coating", span: "tall", ready: true },
   { id: "g15", category: "Detailing", image: "/images/gallery/detailing-05.jpg", alt: "Ford FPV Falcon front three-quarter after detailing", span: "wide", ready: true },
   { id: "g16", category: "Interior", image: "/images/gallery/interior-02.jpg", alt: "Rolls-Royce rear leather seat detail", span: "tall", ready: true },
+  { id: "g17", category: "Ceramic", image: "/images/gallery/ceramic-06.jpg", alt: "BMW M3 front fender and headlight after ceramic coating, reflecting the MEC studio's hexagon light fixture", span: "tall", ready: true },
+  { id: "g18", category: "Ceramic", image: "/images/gallery/ceramic-07.jpg", alt: "BMW M3 finished with ceramic coating in the MEC studio", ready: true },
+  { id: "g19", category: "Wheels", image: "/images/gallery/wheels-03.jpg", alt: "BMW M3 wheel and Michelin Pilot Sport 4S tyre after ceramic coating", ready: true },
+  { id: "g20", category: "Interior", image: "/images/gallery/interior-03.jpg", alt: "BMW M3 red and black M-Sport interior detail", span: "wide", ready: true },
 ];
 
 export const galleryCategories: GalleryCategory[] = [

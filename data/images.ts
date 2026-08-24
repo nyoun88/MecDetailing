@@ -114,8 +114,8 @@ export const images = {
     ready: true,
   },
   detailingInterior: {
-    src: "/images/gallery/interior-01.jpg",
-    alt: "Tesla Model Y interior detail",
+    src: "/images/gallery/interior-03.jpg",
+    alt: "BMW M3 red and black M-Sport interior detail",
     ready: true,
   },
   detailingCorrection: {
