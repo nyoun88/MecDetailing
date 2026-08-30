@@ -222,7 +222,7 @@ export const whyMecSections: WhyMecSection[] = [
   {
     id: "industry-relationships",
     eyebrow: "Industry Relationships",
-    title: "Trusted by automotive businesses.",
+    title: "Held to a commercial standard.",
     body: [
       "We've worked with automotive businesses and dealerships including BYD, Eagers Automotive, Urban Garage and Norris Motor Group, alongside our direct relationship with Gtechniq.",
       "That work means operating to a consistent standard, at volume, under commercial expectations.",

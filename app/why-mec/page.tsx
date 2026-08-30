@@ -20,6 +20,7 @@ import { whyMecSections, whyMecFaqs } from "@/data/why-mec";
 import { images } from "@/data/images";
 import { getGooglePlaceData } from "@/lib/google-reviews";
 
+const industrySection = whyMecSections.find((s) => s.id === "industry-relationships")!;
 const preparationSection = whyMecSections.find((s) => s.id === "preparation-standards")!;
 const aftercareSection = whyMecSections.find((s) => s.id === "aftercare")!;
 
@@ -68,6 +69,9 @@ export default async function WhyMecPage() {
 
       <WhyMecDifferent />
       <WhyMecTrustedBy />
+
+      <EditorialSplit section={industrySection} index="03" />
+
       <WhyMecStandard />
 
       <EditorialSplit section={preparationSection} index="05" />
