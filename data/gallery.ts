@@ -43,6 +43,9 @@ export const galleryItems: GalleryItem[] = [
   { id: "g18", category: "Ceramic", image: "/images/gallery/ceramic-07.jpg", alt: "BMW M3 finished with ceramic coating in the MEC studio", ready: true },
   { id: "g19", category: "Wheels", image: "/images/gallery/wheels-03.jpg", alt: "BMW M3 wheel and Michelin Pilot Sport 4S tyre after ceramic coating", ready: true },
   { id: "g20", category: "Interior", image: "/images/gallery/interior-03.jpg", alt: "BMW M3 red and black M-Sport interior detail", span: "wide", ready: true },
+  { id: "g21", category: "Detailing", image: "/images/gallery/detailing-06.jpg", alt: "BYD Shark 6 side profile outside the MEC studio", span: "wide", ready: true },
+  { id: "g22", category: "Detailing", image: "/images/gallery/detailing-07.jpg", alt: "BYD Shark 6 rear three-quarter in the MEC workshop bay", span: "tall", ready: true },
+  { id: "g23", category: "Detailing", image: "/images/gallery/detailing-08.jpg", alt: "BYD Shark 6 front three-quarter in the MEC studio at golden hour", ready: true },
 ];
 
 export const galleryCategories: GalleryCategory[] = [

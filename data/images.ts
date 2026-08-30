@@ -55,7 +55,7 @@ export const images = {
   },
   industry: {
     src: "/images/why-mec-industry.jpg",
-    alt: "BYD Shark, one of the dealership brands MEC Detailing works with",
+    alt: "BYD Shark 6 front three-quarter in the MEC studio at golden hour",
     ready: true,
   },
   preparation: {
